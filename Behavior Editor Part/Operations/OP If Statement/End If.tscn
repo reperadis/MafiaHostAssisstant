@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://ysi30mtmna7p"]
+
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP If Statement/OP_IfStatement_EndIf.cs" id="1_sue2h"]
+[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="2_mpjge"]
+
+[node name="EndIf" type="VBoxContainer" node_paths=PackedStringArray("varNameLabel", "varTypeTextureRect", "behaviorScope", "fullEndState", "elseState", "elseIfState")]
+offset_right = 800.0
+offset_bottom = 190.0
+theme_override_constants/separation = 0
+script = ExtResource("1_sue2h")
+varNameLabel = NodePath("Else If State/Header/Variable Group/HBoxContainer/MarginContainer/HBoxContainer/Variable Name Label")
+varTypeTextureRect = NodePath("Else If State/Header/Variable Group/HBoxContainer/MarginContainer/HBoxContainer/Type Icon")
+behaviorScope = NodePath("Behavior")
+fullEndState = NodePath("Full End State")
+elseState = NodePath("Else Sate")
+elseIfState = NodePath("Else If State")
+
+[node name="Full End State" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Full End State"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Shifter" type="Control" parent="Full End State/MarginContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="Switch To Else Button" type="Button" parent="Full End State/MarginContainer/Shifter"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = 35.0
+grow_vertical = 2
+
+[node name="Else Sate" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Else Sate"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Shifter" type="Control" parent="Else Sate/MarginContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="Switch To Else If Button" type="Button" parent="Else Sate/MarginContainer/Shifter"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = 35.0
+grow_vertical = 2
+
+[node name="Else If State" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="Else If State"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Shifter" type="Control" parent="Else If State/Header"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Switch To Full End Button" type="Button" parent="Else If State/Header/Shifter"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 80.0
+
+[node name="Variable Group" type="MarginContainer" parent="Else If State/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Else If State/Header/Variable Group"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Field Name Label" type="Label" parent="Else If State/Header/Variable Group/HBoxContainer"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_FIELD_CONDITION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Else If State/Header/Variable Group/HBoxContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="Field Button" type="Button" parent="Else If State/Header/Variable Group/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Else If State/Header/Variable Group/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Type Icon" type="TextureRect" parent="Else If State/Header/Variable Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Variable Name Label" type="Label" parent="Else If State/Header/Variable Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(290, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "@Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Behavior" type="VBoxContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("2_mpjge")
+
+[connection signal="pressed" from="Full End State/MarginContainer/Shifter/Switch To Else Button" to="." method="SwitchToElse"]
+[connection signal="pressed" from="Else Sate/MarginContainer/Shifter/Switch To Else If Button" to="." method="SwitchToElseIf"]
+[connection signal="pressed" from="Else If State/Header/Shifter/Switch To Full End Button" to="." method="SwitchToFullEnd"]

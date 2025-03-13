@@ -1,0 +1,172 @@
+[gd_scene load_steps=7 format=3 uid="uid://c27f40q3tqk5d"]
+
+[ext_resource type="PackedScene" uid="uid://djmir7n50jtl8" path="res://Config Fields/Named String Field.tscn" id="1_5emqt"]
+[ext_resource type="Theme" uid="uid://bqm4r87lxhdnh" path="res://Role Editor Part/Role Editor Light.tres" id="1_61jym"]
+[ext_resource type="Script" path="res://Role Editor Part/RoleEditor.cs" id="2_8bix1"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="3_bqxwg"]
+[ext_resource type="PackedScene" uid="uid://lti3vmrjhjde" path="res://Role Editor Part/Behavior Selection Panel.tscn" id="4_jvekm"]
+[ext_resource type="PackedScene" uid="uid://b8w64s3oxbrmy" path="res://Role Editor Part/Role Action Panel.tscn" id="7_y1brm"]
+
+[node name="Role Editor" type="Control" node_paths=PackedStringArray("toPageOneButton", "cancelButton", "toPageTwoButton", "createButton", "pageOne", "pageTwo", "roleNameField", "roleDescriptionField", "passivePlayerActionPanel", "passiveUnionActionPanel", "activeActionPanelsContent")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_61jym")
+script = ExtResource("2_8bix1")
+roleActionPanelScene = ExtResource("7_y1brm")
+toPageOneButton = NodePath("To Page 1 Button")
+cancelButton = NodePath("Cancel HButton")
+toPageTwoButton = NodePath("To Page 2 Button")
+createButton = NodePath("Create Role HButton")
+pageOne = NodePath("Page 1")
+pageTwo = NodePath("Page 2")
+roleNameField = NodePath("Page 1/ScrollContainer/MarginContainer/VBoxContainer/Name Field")
+roleDescriptionField = NodePath("Page 1/ScrollContainer/MarginContainer/VBoxContainer/Description Field")
+passivePlayerActionPanel = NodePath("Page 2/ScrollContainer/MarginContainer/VBoxContainer/Passive Player Action Selection Panel")
+passiveUnionActionPanel = NodePath("Page 2/ScrollContainer/MarginContainer/VBoxContainer/Passive Union Action Selection Panel")
+activeActionPanelsContent = NodePath("Page 2/ScrollContainer/MarginContainer/VBoxContainer/Role Actions Content")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="Page 1" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Page 1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 1/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 1/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Name Field" parent="Page 1/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_5emqt")]
+custom_minimum_size = Vector2(900, 250)
+layout_mode = 2
+
+[node name="Description Field" parent="Page 1/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_5emqt")]
+custom_minimum_size = Vector2(1000, 250)
+layout_mode = 2
+
+[node name="Page 2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1080.0
+offset_right = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Page 2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 2/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Passive Player Action Selection Panel" parent="Page 2/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_jvekm")]
+layout_mode = 2
+
+[node name="Passive Union Action Selection Panel" parent="Page 2/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_jvekm")]
+layout_mode = 2
+
+[node name="Role Actions Content" type="VBoxContainer" parent="Page 2/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="To Page 1 Button" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -175.0
+offset_right = 490.0
+offset_bottom = -25.0
+grow_vertical = 0
+
+[node name="Cancel HButton" parent="." instance=ExtResource("3_bqxwg")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 25.0
+offset_top = 1745.0
+offset_right = 490.0
+offset_bottom = 1895.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="To Page 2 Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 590.0
+offset_top = -175.0
+offset_right = 1055.0
+offset_bottom = -25.0
+grow_vertical = 0
+
+[node name="Create Role HButton" parent="." instance=ExtResource("3_bqxwg")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 590.0
+offset_top = 1745.0
+offset_right = 1055.0
+offset_bottom = 1895.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="To Page 1 Button" to="." method="MoveToPageOne"]
+[connection signal="Held" from="Cancel HButton" to="." method="ExitEditor"]
+[connection signal="pressed" from="To Page 2 Button" to="." method="MoveToPageTwo"]
+[connection signal="Held" from="Create Role HButton" to="." method="TryCreateRole"]

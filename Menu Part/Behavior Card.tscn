@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://c40jnhokll2hk"]
+
+[ext_resource type="Theme" uid="uid://cm33svj33x7t8" path="res://Menu Part/Behavior Item Light.tres" id="1_yfvw1"]
+[ext_resource type="Script" path="res://Menu Part/BehaviorCard.cs" id="2_65url"]
+[ext_resource type="PackedScene" uid="uid://cyp2hfdy6byrm" path="res://Menu Part/Item.tscn" id="3_cwjjx"]
+[ext_resource type="Texture2D" uid="uid://dp010rl8vbhc7" path="res://Menu Part/Graphics/Tags.png" id="4_g8g5s"]
+
+[node name="Behavior Card" type="PanelContainer" node_paths=PackedStringArray("behNameLabel", "tagsExpandButtonContent", "tagsContent", "configExpandButtonContent", "configContent", "createdSharedVarsExpandButtonContent", "createdSharedVarsContent", "readSharedVarsExpandButtonContent", "readSharedVarsContent")]
+custom_minimum_size = Vector2(850, 0)
+size_flags_horizontal = 4
+theme = ExtResource("1_yfvw1")
+script = ExtResource("2_65url")
+behNameLabel = NodePath("VBoxContainer/Behavior Name Label")
+tagsExpandButtonContent = NodePath("VBoxContainer/Tags Expand Button Container")
+tagsContent = NodePath("VBoxContainer/Tags MC/Content")
+configExpandButtonContent = NodePath("VBoxContainer/Configs Expand Button Container")
+configContent = NodePath("VBoxContainer/Configs MC/Content")
+createdSharedVarsExpandButtonContent = NodePath("VBoxContainer/Created Shared Vars Expand Button Container")
+createdSharedVarsContent = NodePath("VBoxContainer/Created Shared Vars MC/Content")
+readSharedVarsExpandButtonContent = NodePath("VBoxContainer/Read Shared Vars Expand Button Container")
+readSharedVarsContent = NodePath("VBoxContainer/Read Shared Vars MC/Content")
+itemScene = ExtResource("3_cwjjx")
+tagTexture = ExtResource("4_g8g5s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Behavior Name Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Behavior Name Goes There"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tags Expand Button Container" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Expand Button" type="Button" parent="VBoxContainer/Tags Expand Button Container"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Tags Expand Button Container"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tags MC" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/Tags MC"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Configs Expand Button Container" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Expand Button" type="Button" parent="VBoxContainer/Configs Expand Button Container"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Configs Expand Button Container"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Configs MC" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/Configs MC"]
+layout_mode = 2
+
+[node name="Created Shared Vars Expand Button Container" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Expand Button" type="Button" parent="VBoxContainer/Created Shared Vars Expand Button Container"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Created Shared Vars Expand Button Container"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Created Shared Vars MC" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/Created Shared Vars MC"]
+layout_mode = 2
+
+[node name="Read Shared Vars Expand Button Container" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Expand Button" type="Button" parent="VBoxContainer/Read Shared Vars Expand Button Container"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Read Shared Vars Expand Button Container"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Read Shared Vars MC" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/Read Shared Vars MC"]
+layout_mode = 2

@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://lti3vmrjhjde"]
+
+[ext_resource type="Script" path="res://BehaviorSelectionPanel.cs" id="1_l02qo"]
+[ext_resource type="PackedScene" uid="uid://c7avlvmkvt61o" path="res://Config Fields/Item.tscn" id="2_mhtlk"]
+[ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="3_ea11f"]
+
+[node name="Behavior Selection Panel" type="PanelContainer" node_paths=PackedStringArray("label", "dropdown", "configsGroupLabel", "configsContent", "accessedVarsGroupLabel", "accessedVariablesContent", "createdVarsGroupLabel", "createdVariablesContent")]
+custom_minimum_size = Vector2(900, 0)
+size_flags_horizontal = 4
+script = ExtResource("1_l02qo")
+itemScene = ExtResource("2_mhtlk")
+label = NodePath("MarginContainer/VBoxContainer/Label")
+dropdown = NodePath("MarginContainer/VBoxContainer/Dropdown")
+configsGroupLabel = NodePath("MarginContainer/VBoxContainer/Configs Group Label")
+configsContent = NodePath("MarginContainer/VBoxContainer/Configs")
+accessedVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Accessed Vars Group Label")
+accessedVariablesContent = NodePath("MarginContainer/VBoxContainer/Accessed Vars")
+createdVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Created Vars Group Label")
+createdVariablesContent = NodePath("MarginContainer/VBoxContainer/Created Vars")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 55
+text = "Name goes there"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Dropdown" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_ea11f")]
+custom_minimum_size = Vector2(700, 120)
+layout_mode = 2
+
+[node name="Configs Group Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 50
+text = "TK:CONFIGURABLE-VARIABLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Configs" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Accessed Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 50
+text = "TK:ACCESSED-SHARED-VARIABLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Accessed Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Created Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 50
+text = "TK:CREATED-SHARED-VARIABLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Created Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20

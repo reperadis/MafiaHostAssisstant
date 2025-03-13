@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct25g2o8wigfg"]
+
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/NamedTypeSearchField.cs" id="1_f8fle"]
+[ext_resource type="Theme" uid="uid://c56ucxmoo2hxi" path="res://Config Fields/Named Field Light.tres" id="1_yiyke"]
+[ext_resource type="Theme" uid="uid://m0siy14yavkj" path="res://Config Fields/Named Field Dark.tres" id="3_a06rs"]
+[ext_resource type="PackedScene" uid="uid://cfjj6dmexs45s" path="res://Config Fields/Behaviour Editor/Type Search Field.tscn" id="3_g5lfb"]
+
+[node name="Named Type Search Field" type="PanelContainer" node_paths=PackedStringArray("label", "field")]
+custom_minimum_size = Vector2(730, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("1_yiyke")
+script = ExtResource("1_f8fle")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+field = NodePath("MarginContainer/HBoxContainer/Type Search Field")
+lightTheme = ExtResource("1_yiyke")
+darkTheme = ExtResource("3_a06rs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Type Search Field" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_g5lfb")]
+custom_minimum_size = Vector2(630, 100)
+layout_mode = 2

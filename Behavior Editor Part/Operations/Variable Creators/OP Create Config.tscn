@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv1t8lvok47kk"]
+
+[ext_resource type="PackedScene" uid="uid://djlm7hnxu5isw" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Variable.tscn" id="1_prlhl"]
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/Variable Creators/OP_CreateConfig.cs" id="2_w2mpb"]
+
+[node name="Create Config Operation" instance=ExtResource("1_prlhl")]
+script = ExtResource("2_w2mpb")
+
+[node name="Operation Label" parent="Content/MarginContainer/VBoxContainer/Label Container" index="0"]
+text = "TK:OP_CREATE-CONFIG"

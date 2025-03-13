@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs7nicmdjwwv8"]
+
+[ext_resource type="PackedScene" uid="uid://cy0e0lx7lhhac" path="res://Scenes/Settings And Docs.tscn" id="1_06r1q"]
+[ext_resource type="Script" path="res://BootstrapManager.cs" id="1_r03nj"]
+[ext_resource type="Script" path="res://Cache.cs" id="3_7qw4d"]
+
+[node name="Bootstrap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r03nj")
+
+[node name="Settings and Docs" parent="." instance=ExtResource("1_06r1q")]
+visible = false
+layout_mode = 1
+
+[node name="Cache" type="Node" parent="."]
+script = ExtResource("3_7qw4d")

@@ -1,0 +1,407 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmfm7d4504c6i"]
+
+[ext_resource type="Theme" uid="uid://bi38y1ubqlq8t" path="res://Menu Part/Graphics/Menu Light.tres" id="1_nggyf"]
+[ext_resource type="Script" path="res://Menu Part/MenuManager.cs" id="1_w0hpw"]
+[ext_resource type="PackedScene" uid="uid://br377f307i0ns" path="res://Menu Part/Role Card.tscn" id="2_bnrsy"]
+[ext_resource type="Texture2D" uid="uid://i0tkkxsbusog" path="res://Graphics/Plus.svg" id="3_mi0ba"]
+[ext_resource type="Theme" uid="uid://bkilnkbf8xos3" path="res://Menu Part/Graphics/Menu Dark.tres" id="4_shw67"]
+[ext_resource type="PackedScene" uid="uid://c40jnhokll2hk" path="res://Menu Part/Behavior Card.tscn" id="5_w6514"]
+[ext_resource type="Script" path="res://Settings And Docs Part/OpenSettingsButton.cs" id="7_vdb66"]
+[ext_resource type="Texture2D" uid="uid://dimwmoyepwh7b" path="res://Graphics/Settings Dark.png" id="8_8qn0v"]
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("mainMenu", "deck", "behaviorsList", "behaviorsContent", "createMenu", "createMenuCT", "firstDeckPage", "secondDeckPage", "cardsContent", "createNewRoleButton")]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_shw67")
+script = ExtResource("1_w0hpw")
+mainMenu = NodePath("Main Menu")
+deck = NodePath("Deck")
+behaviorsList = NodePath("Behaviors List")
+behaviorsContent = NodePath("Behaviors List/ScrollContainer/MarginContainer/Content")
+createMenu = NodePath("Create Menu")
+createMenuCT = NodePath("Create Menu CT")
+firstDeckPage = NodePath("Deck/First Page")
+secondDeckPage = NodePath("Deck/Second Page")
+behaviorCardScene = ExtResource("5_w6514")
+lightTheme = ExtResource("1_nggyf")
+darkTheme = ExtResource("4_shw67")
+cardsContent = NodePath("Deck/First Page/Cards ScrollContainer/MarginContainer/Cards Container")
+createNewRoleButton = NodePath("Deck/First Page/Cards ScrollContainer/MarginContainer/Cards Container/Create New Role Button")
+roleCardScene = ExtResource("2_bnrsy")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="Main Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Start Game Button" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"BigButton"
+theme_override_font_sizes/font_size = 60
+text = "TK:MENU_START"
+autowrap_mode = 3
+
+[node name="Create Btn" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"BigButton"
+theme_override_font_sizes/font_size = 60
+text = "TK:MENU_CREATE"
+autowrap_mode = 3
+
+[node name="Deck Btn" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"BigButton"
+theme_override_font_sizes/font_size = 60
+text = "TK:MENU_DECK"
+autowrap_mode = 3
+
+[node name="Behaviours Btn" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"BigButton"
+theme_override_font_sizes/font_size = 60
+text = "TK:MENU_BEHAVIOURS"
+autowrap_mode = 3
+
+[node name="Behaviors List" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1080.0
+offset_right = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Behaviors List"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Behaviors List/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="Content" type="VBoxContainer" parent="Behaviors List/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Behaviors List"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -200.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"SmallButton"
+
+[node name="Deck" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="First Page" type="Control" parent="Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cards ScrollContainer" type="ScrollContainer" parent="Deck/First Page"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1088.0
+offset_bottom = 1719.0
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Deck/First Page/Cards ScrollContainer"]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="Cards Container" type="VBoxContainer" parent="Deck/First Page/Cards ScrollContainer/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Create New Role Button" type="Button" parent="Deck/First Page/Cards ScrollContainer/MarginContainer/Cards Container"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"BigButton"
+
+[node name="TextureRect" type="TextureRect" parent="Deck/First Page/Cards ScrollContainer/MarginContainer/Cards Container/Create New Role Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mi0ba")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Second Page" type="Control" parent="Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1080.0
+offset_right = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left Button" type="Button" parent="Deck"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -175.0
+offset_right = 490.0
+offset_bottom = -25.0
+grow_vertical = 0
+theme_type_variation = &"BigButton"
+icon_alignment = 1
+
+[node name="Right Button" type="Button" parent="Deck"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -490.0
+offset_top = -175.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"BigButton"
+
+[node name="Create Menu CT" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.164706, 0.164706, 0.698039)
+
+[node name="Button" type="Button" parent="Create Menu CT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Create Menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -450.0
+offset_right = 650.0
+offset_bottom = 450.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"CreateMenuPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Create Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Create Label" type="Label" parent="Create Menu/VBoxContainer"]
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 50
+text = "TK:MENU_CREATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Create Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Create Menu/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="New Role Button" type="Button" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 40
+text = "TK:ROLE"
+autowrap_mode = 3
+
+[node name="New Waking Algorythm Button" type="Button" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 40
+text = "TK:WAKING-ALGORYTHM"
+autowrap_mode = 3
+
+[node name="New Active Action With Player Button" type="Button" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 40
+text = "TK:ACTIVE-ACTION-WITH-PLAYER"
+autowrap_mode = 3
+
+[node name="New Passive Action With Player Button" type="Button" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 40
+text = "TK:PASSIVE-ACTION-WITH-PLAYER"
+autowrap_mode = 3
+
+[node name="New Passive Action With Union Button" type="Button" parent="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 40
+text = "TK:PASSIVE-ACTION-WITH-UNION"
+autowrap_mode = 3
+
+[node name="Settings and Docs Button" type="Button" parent="."]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+script = ExtResource("7_vdb66")
+
+[node name="TextureRect" type="TextureRect" parent="Settings and Docs Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_8qn0v")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Start Game Button" to="." method="LoadGame"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Create Btn" to="." method="OpenCreateMenu"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Deck Btn" to="." method="MoveFromMainToDeck"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Behaviours Btn" to="." method="MoveFromMainToBehs"]
+[connection signal="pressed" from="Deck/First Page/Cards ScrollContainer/MarginContainer/Cards Container/Create New Role Button" to="." method="LoadRoleEditor"]
+[connection signal="pressed" from="Deck/Left Button" to="." method="OnLeftDeckButton"]
+[connection signal="pressed" from="Deck/Right Button" to="." method="OnRightDeckButton"]
+[connection signal="pressed" from="Create Menu CT/Button" to="." method="CloseCreateMenu"]
+[connection signal="pressed" from="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/New Role Button" to="." method="LoadRoleEditor"]
+[connection signal="pressed" from="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/New Waking Algorythm Button" to="." method="LoadBehEditorForWakingAlgorythm"]
+[connection signal="pressed" from="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/New Active Action With Player Button" to="." method="LoadBehEditorForActiveActionWithPlayer"]
+[connection signal="pressed" from="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/New Passive Action With Player Button" to="." method="LoadBehEditorForPassiveActionWithPlayer"]
+[connection signal="pressed" from="Create Menu/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/New Passive Action With Union Button" to="." method="LoadBehEditorForPassiveActionWithUnion"]

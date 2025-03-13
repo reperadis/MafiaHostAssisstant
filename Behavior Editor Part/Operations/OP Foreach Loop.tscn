@@ -1,0 +1,259 @@
+[gd_scene load_steps=6 format=3 uid="uid://b58fdugyv7mqi"]
+
+[ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_vm0mn"]
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_ForeachLoop.cs" id="2_fchqk"]
+[ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_2j427"]
+[ext_resource type="Script" path="res://HoldableButton.cs" id="4_ker3m"]
+[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="4_xtmw5"]
+
+[node name="Foreach Loop Operation" type="HBoxContainer" node_paths=PackedStringArray("behaviorScope", "listVarNameLabel", "listVarTypeTextureRect", "elementNameLabel", "elementTypeTextureRect", "identationControl", "deselectionButton")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -960.0
+offset_right = 360.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vm0mn")
+theme_override_constants/separation = 0
+script = ExtResource("2_fchqk")
+behaviorScope = NodePath("Content/Behavior")
+listVarNameLabel = NodePath("Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer/HBoxContainer/Variable Name Label")
+listVarTypeTextureRect = NodePath("Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer/HBoxContainer/Type Icon")
+elementNameLabel = NodePath("Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer/HBoxContainer/Variable Name Label")
+elementTypeTextureRect = NodePath("Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer/HBoxContainer/Type Icon")
+darkTheme = ExtResource("3_2j427")
+lightTheme = ExtResource("1_vm0mn")
+identationControl = NodePath("Identation")
+deselectionButton = NodePath("Content/Header Container/Content/Deselect Button")
+
+[node name="Identation" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header Container" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Operation Tools" type="Control" parent="Content/Header Container"]
+layout_mode = 2
+
+[node name="Move Up Button" type="Button" parent="Content/Header Container/Operation Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -92.5
+offset_right = -10.0
+offset_bottom = -12.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"OperationToolButton"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move Down Button" type="Button" parent="Content/Header Container/Operation Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 12.5
+offset_right = -10.0
+offset_bottom = 92.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"OperationToolButton"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Content" type="PanelContainer" parent="Content/Header Container"]
+custom_minimum_size = Vector2(800, 440)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/Header Container/Content"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/Header Container/Content/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label Container" type="MarginContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Operation Label" type="Label" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_FOREACH-LOOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Select HButton" type="Button" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container" node_paths=PackedStringArray("progressBar")]
+clip_children = 1
+layout_mode = 2
+script = ExtResource("4_ker3m")
+progressBar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+show_percentage = false
+
+[node name="List Group" type="MarginContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Field Name Label" type="Label" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:VARTYPE_LIST"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="Field Button" type="Button" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Type Icon" type="TextureRect" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Variable Name Label" type="Label" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(290, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "@Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Element Group" type="MarginContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Field Name Label" type="Label" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_FIELD_ELEMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="Field Button" type="Button" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Type Icon" type="TextureRect" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Variable Name Label" type="Label" parent="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(290, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "@Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Deselect Button" type="Button" parent="Content/Header Container/Content"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"DeselectButton"
+
+[node name="Behavior" type="VBoxContainer" parent="Content"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("4_xtmw5")
+
+[node name="End" type="Panel" parent="Content"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[connection signal="pressed" from="Content/Header Container/Operation Tools/Move Up Button" to="." method="MoveUp"]
+[connection signal="pressed" from="Content/Header Container/Operation Tools/Move Down Button" to="." method="MoveDown"]
+[connection signal="Held" from="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" to="." method="Select"]
+[connection signal="button_down" from="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" to="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" method="PointerDown"]
+[connection signal="button_up" from="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" to="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" method="PointerUp"]
+[connection signal="visibility_changed" from="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" to="Content/Header Container/Content/MarginContainer/VBoxContainer/Label Container/Select HButton" method="OnVisibilityChanged"]
+[connection signal="pressed" from="Content/Header Container/Content/MarginContainer/VBoxContainer/List Group/HBoxContainer/MarginContainer/Field Button" to="." method="OpenConfigWindow"]
+[connection signal="pressed" from="Content/Header Container/Content/MarginContainer/VBoxContainer/Element Group/HBoxContainer/MarginContainer/Field Button" to="." method="OpenConfigWindow"]
+[connection signal="pressed" from="Content/Header Container/Content/Deselect Button" to="." method="Deselect"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbo2vcf6fdec"]
+
+[ext_resource type="Script" path="res://UI/ColorEmbedLabel.cs" id="1_b3775"]
+[ext_resource type="FontFile" uid="uid://cufsxrf5dmxcx" path="res://Misc/Vollda-Bold.otf" id="2_tsjk7"]
+
+[node name="Error Message" type="Control"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_b3775")
+TextFont = ExtResource("2_tsjk7")
+FontSize = 40
+Text = "Error text goes there"
+DefaultColor = Color(1, 1, 1, 1)

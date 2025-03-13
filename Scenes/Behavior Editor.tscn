@@ -1,0 +1,1053 @@
+[gd_scene load_steps=42 format=3 uid="uid://c2x6hjab2t75l"]
+
+[ext_resource type="Theme" uid="uid://cem4jvl4r6lw" path="res://Behavior Editor Part/Graphics/Behavior Editor Dark.tres" id="1_lgnsd"]
+[ext_resource type="Script" path="res://Behavior Editor Part/BehaviorEditor.cs" id="1_veu2s"]
+[ext_resource type="Script" path="res://Behavior Editor Part/EntryPoint.cs" id="2_ieop1"]
+[ext_resource type="PackedScene" uid="uid://djlm7hnxu5isw" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Variable.tscn" id="3_drm31"]
+[ext_resource type="Theme" uid="uid://cis12ykc7ldua" path="res://Behavior Editor Part/Graphics/Behavior Editor Light.tres" id="3_hsdh6"]
+[ext_resource type="PackedScene" uid="uid://dsssicrvr2qps" path="res://Config Fields/Behaviour Editor/BE Dynamic String Config Field.tscn" id="3_lc3gu"]
+[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="4_5vm57"]
+[ext_resource type="PackedScene" uid="uid://b1et6gkkcf55m" path="res://Behavior Editor Part/Operation Pad.tscn" id="4_12qbd"]
+[ext_resource type="PackedScene" uid="uid://dvw1u8ruhu45c" path="res://Behavior Editor Part/Error Message Group.tscn" id="4_uum6h"]
+[ext_resource type="PackedScene" uid="uid://ct25g2o8wigfg" path="res://Config Fields/Behaviour Editor/Named Type Search Field.tscn" id="6_k30y1"]
+[ext_resource type="PackedScene" uid="uid://ck6h7u1fawjtf" path="res://Config Fields/Named Bool Field.tscn" id="7_bx3tq"]
+[ext_resource type="PackedScene" uid="uid://dtvb8yw87d3c" path="res://Config Fields/Named Enum Field.tscn" id="8_djw20"]
+[ext_resource type="PackedScene" uid="uid://dhnl7wtsncj27" path="res://Config Fields/Named Int Config Field.tscn" id="9_0odor"]
+[ext_resource type="PackedScene" uid="uid://djmir7n50jtl8" path="res://Config Fields/Named String Field.tscn" id="9_kcl32"]
+[ext_resource type="Texture2D" uid="uid://0g4356rhh3yw" path="res://Graphics/Config Dark.png" id="10_6inf5"]
+[ext_resource type="PackedScene" uid="uid://clpj5sw1st5g7" path="res://Behavior Editor Part/Operations/OP Attach Log Note.tscn" id="10_8nnah"]
+[ext_resource type="Script" path="res://Settings And Docs Part/OpenSettingsButton.cs" id="10_tjlmu"]
+[ext_resource type="PackedScene" uid="uid://cua3huj5xk45l" path="res://Behavior Editor Part/Operations/OP Logical Operation.tscn" id="11_awsxh"]
+[ext_resource type="Texture2D" uid="uid://dimwmoyepwh7b" path="res://Graphics/Settings Dark.png" id="12_swkp4"]
+[ext_resource type="PackedScene" uid="uid://b58fdugyv7mqi" path="res://Behavior Editor Part/Operations/OP Foreach Loop.tscn" id="12_yw4de"]
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEItemSelectionField.cs" id="13_5ncit"]
+[ext_resource type="PackedScene" uid="uid://bvemf2msk0wof" path="res://Behavior Editor Part/Operations/OP Control Flow.tscn" id="13_qwjhr"]
+[ext_resource type="PackedScene" uid="uid://vj3igkelhfro" path="res://Config Fields/Behaviour Editor/Item Card.tscn" id="13_ysqw3"]
+[ext_resource type="PackedScene" uid="uid://bm7211gmbuuc3" path="res://Behavior Editor Part/Operations/OP Get Value.tscn" id="14_pvg1q"]
+[ext_resource type="PackedScene" uid="uid://ub4gwkpyj2fp" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Persistent Variable.tscn" id="16_jl7g5"]
+[ext_resource type="PackedScene" uid="uid://cv1t8lvok47kk" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Config.tscn" id="17_4bpcb"]
+[ext_resource type="PackedScene" uid="uid://tf4831q001xc" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Shared Variable.tscn" id="18_0g0k3"]
+[ext_resource type="PackedScene" uid="uid://chaotskhcuweu" path="res://Behavior Editor Part/Operations/Variable Creators/OP Read Shared Variable.tscn" id="19_ul5ts"]
+[ext_resource type="PackedScene" uid="uid://cde12iplbag0p" path="res://Behavior Editor Part/Operations/OP Assign Directly.tscn" id="20_guodn"]
+[ext_resource type="PackedScene" uid="uid://d1l7pgpby3tyd" path="res://Behavior Editor Part/Operations/OP Compare Equality.tscn" id="21_v40io"]
+[ext_resource type="Theme" uid="uid://c0irjjdqjcgek" path="res://Behavior Editor Part/Graphics/Tags Field Light.tres" id="21_wmkko"]
+[ext_resource type="PackedScene" uid="uid://b72qf5d8hnp2g" path="res://Behavior Editor Part/Operations/OP Compare Integers.tscn" id="22_a4v8a"]
+[ext_resource type="PackedScene" uid="uid://crb10hj0013w0" path="res://Behavior Editor Part/Operations/OP Find All Players With Role.tscn" id="24_1ppca"]
+[ext_resource type="PackedScene" uid="uid://dxdxc2w5gcsf2" path="res://Config Fields/String Config Field.tscn" id="24_03t3b"]
+[ext_resource type="PackedScene" uid="uid://dauowciy1rdap" path="res://Behavior Editor Part/Operations/OP If Statement/OP If Statement.tscn" id="24_uoj86"]
+[ext_resource type="PackedScene" uid="uid://b6cpcunh7bjk6" path="res://Behavior Editor Part/Operations/OP Integer Operation.tscn" id="27_mehgf"]
+[ext_resource type="PackedScene" uid="uid://dnvvbn7sx0ref" path="res://Behavior Editor Part/Operations/OP Ask Value.tscn" id="29_ab06s"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="30_pa6wk"]
+[ext_resource type="PackedScene" uid="uid://c1gr7hmli4n86" path="res://Behavior Editor Part/Operations/OP Branch/OP Branch.tscn" id="32_l8bki"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdlvs"]
+load_path = "res://.godot/imported/Config Light.png-875bd1d97dae949085128dffb0d48ce9.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhjob"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 0.666667)
+
+[node name="BehaviorEditor" type="Control" node_paths=PackedStringArray("iniEntryPoint", "specEntryPoint", "rootIniScope", "rootSpecScope", "saveErrorsColorTint", "invalidBehaviorNameColorTint", "saveErrorDetailsLabel", "exitAnywayButton", "operationConfigWindowContent", "operationConfigWindowCR", "behaviorConfigurationCT", "behaviorNameField", "createsLogField", "tagsField")]
+auto_translate_mode = 1
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lgnsd")
+script = ExtResource("1_veu2s")
+lightTheme = ExtResource("3_hsdh6")
+darkTheme = ExtResource("1_lgnsd")
+iniEntryPoint = NodePath("Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point")
+specEntryPoint = NodePath("Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point")
+rootIniScope = NodePath("Ini Behavior Window/VBoxContainer/Behaviour Scroll Container/Behavior Scope")
+rootSpecScope = NodePath("Spec Behavior Window/VBoxContainer/Behaviour Scroll Container/Behavior Scope")
+saveErrorsColorTint = NodePath("Behavior Save Error CT")
+invalidBehaviorNameColorTint = NodePath("Behavior Invalid Name CT")
+saveErrorDetailsLabel = NodePath("Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Details Label")
+exitAnywayButton = NodePath("Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Proceed Anyways HButton")
+dynamicStringFieldScene = ExtResource("3_lc3gu")
+typeSearchFieldScene = ExtResource("6_k30y1")
+boolFieldScene = ExtResource("7_bx3tq")
+intFieldScene = ExtResource("9_0odor")
+stringFieldScene = ExtResource("9_kcl32")
+enumFieldScene = ExtResource("8_djw20")
+operationConfigWindowContent = NodePath("Operation Config Window CT/Panel/ScrollContainer/Configs Content")
+operationConfigWindowCR = NodePath("Operation Config Window CT")
+behaviorConfigurationCT = NodePath("Behavior Configuration CT")
+behaviorNameField = NodePath("Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Behavior Name Field")
+createsLogField = NodePath("Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/AWPCase Creates Log Field")
+tagsField = NodePath("Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="Top Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Exit Button" type="Button" parent="Top Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 130.0
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Top Buttons/Exit Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Behvaiour Config Button" type="Button" parent="Top Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 20.0
+offset_right = -170.0
+offset_bottom = 130.0
+grow_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Top Buttons/Behvaiour Config Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_6inf5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Settings and Docs Button" type="Button" parent="Top Buttons"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+script = ExtResource("10_tjlmu")
+
+[node name="TextureRect" type="TextureRect" parent="Top Buttons/Settings and Docs Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_swkp4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Entry Point Scroll Container" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Entry Point Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Entry Point Scroll Container/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 120
+
+[node name="Ini Entry Point" type="PanelContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer" node_paths=PackedStringArray("nameLabel", "returnTypeTextureRect", "buttonTexture", "errorsContent", "behaviorEditor", "behaviorWindow", "selectionManipulationTab", "behaviorScope")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"EntryPointPanel"
+script = ExtResource("2_ieop1")
+nameLabel = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Label")
+returnTypeTextureRect = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Type Texture Margin/Type Texture Rect")
+buttonTexture = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button/TextureRect")
+lightTexture = SubResource("CompressedTexture2D_bdlvs")
+errorsContent = NodePath("MarginContainer/VBoxContainer")
+errorGroupScene = ExtResource("4_uum6h")
+behaviorEditor = NodePath("../../../..")
+behaviorWindow = NodePath("../../../../Ini Behavior Window")
+selectionManipulationTab = NodePath("../../../../Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons")
+behaviorScope = NodePath("../../../../Ini Behavior Window/VBoxContainer/Behaviour Scroll Container/Behavior Scope")
+
+[node name="MarginContainer" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Header HBoxContainer" type="HBoxContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Type Texture Margin" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Type Texture Rect" type="TextureRect" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Type Texture Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 60
+text = "TK:INITIALIZATION"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Edit Button Margin" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Edit Button" type="Button" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_6inf5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spec Entry Point" type="PanelContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer" node_paths=PackedStringArray("nameLabel", "returnTypeTextureRect", "buttonTexture", "errorsContent", "behaviorEditor", "behaviorWindow", "selectionManipulationTab", "behaviorScope")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"EntryPointPanel"
+script = ExtResource("2_ieop1")
+nameLabel = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Label")
+returnTypeTextureRect = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Type Texture Margin/Type Texture Rect")
+buttonTexture = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button/TextureRect")
+lightTexture = SubResource("CompressedTexture2D_bdlvs")
+errorsContent = NodePath("MarginContainer/VBoxContainer")
+errorGroupScene = ExtResource("4_uum6h")
+behaviorEditor = NodePath("../../../..")
+behaviorWindow = NodePath("../../../../Spec Behavior Window")
+selectionManipulationTab = NodePath("../../../../Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons")
+behaviorScope = NodePath("../../../../Spec Behavior Window/VBoxContainer/Behaviour Scroll Container/Behavior Scope")
+
+[node name="MarginContainer" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Header HBoxContainer" type="HBoxContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Type Texture Margin" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Type Texture Rect" type="TextureRect" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Type Texture Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 60
+text = "Entry Point Name Goes There"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Edit Button Margin" type="MarginContainer" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Edit Button" type="Button" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_6inf5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ini Behavior Window" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Ini Behavior Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ini Behavior Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Selection Manipulation Buttons" type="Control" parent="Ini Behavior Window/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Deselect All Button" type="Button" parent="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_type_variation = &"SmallButton"
+
+[node name="Delete Selected HButton" parent="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons" instance=ExtResource("30_pa6wk")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 0
+grow_vertical = 1
+theme = null
+theme_type_variation = &"SmallButton"
+flat = true
+
+[node name="Mask" parent="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton" index="0"]
+theme_type_variation = &"SmallPanel"
+
+[node name="Behaviour Scroll Container" type="ScrollContainer" parent="Ini Behavior Window/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Behavior Scope" type="VBoxContainer" parent="Ini Behavior Window/VBoxContainer/Behaviour Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_5vm57")
+
+[node name="Operations Scroll Container" type="ScrollContainer" parent="Ini Behavior Window/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Done Button" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:DONE"
+script = null
+
+[node name="Create Variable Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CREATE-VARIABLE"
+operation = ExtResource("3_drm31")
+
+[node name="Create Persistent Variable Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CREATE-PERSISTENT-VARIABLE"
+operation = ExtResource("16_jl7g5")
+
+[node name="Create Config Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CREATE-CONFIG"
+operation = ExtResource("17_4bpcb")
+
+[node name="Create Shared Variable Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CREATE-SHARED-VARIABLE"
+operation = ExtResource("18_0g0k3")
+
+[node name="Read Shared Variable Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_READ-SHARED-VARIABLE"
+operation = ExtResource("19_ul5ts")
+
+[node name="Assign Directy Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_ASSIGN-DIRECTLY"
+operation = ExtResource("20_guodn")
+
+[node name="Compare Equality Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_COMPARE-EQUALITY"
+operation = ExtResource("21_v40io")
+
+[node name="Compare Integers Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_COMPARE-INTEGERS"
+operation = ExtResource("22_a4v8a")
+
+[node name="Control Flow Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CONTROL-FLOW"
+operation = ExtResource("13_qwjhr")
+
+[node name="If Statement Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_IF-STATEMENT"
+operation = ExtResource("24_uoj86")
+
+[node name="Find All Players With Role Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_FIND-ALL-PLAYERS-WITH-ROLE"
+operation = ExtResource("24_1ppca")
+
+[node name="Foreach Loop Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_FOREACH-LOOP"
+operation = ExtResource("12_yw4de")
+
+[node name="Get Value Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_GET-VALUE"
+operation = ExtResource("14_pvg1q")
+
+[node name="Integer Operation Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_INTEGER-OPERATION"
+operation = ExtResource("27_mehgf")
+
+[node name="Logical Operation Pad" parent="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_LOGICAL-OPERATION"
+operation = ExtResource("11_awsxh")
+
+[node name="Spec Behavior Window" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Spec Behavior Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Spec Behavior Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Selection Manipulation Buttons" type="Control" parent="Spec Behavior Window/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Deselect All Button" type="Button" parent="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_type_variation = &"SmallButton"
+
+[node name="Delete Selected HButton" parent="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons" instance=ExtResource("30_pa6wk")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 0
+grow_vertical = 1
+theme = null
+flat = true
+
+[node name="Mask" parent="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton" index="0"]
+theme_type_variation = &"SmallPanel"
+
+[node name="Behaviour Scroll Container" type="ScrollContainer" parent="Spec Behavior Window/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Behavior Scope" type="VBoxContainer" parent="Spec Behavior Window/VBoxContainer/Behaviour Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_5vm57")
+
+[node name="Operations Scroll Container" type="ScrollContainer" parent="Spec Behavior Window/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Done Button" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:DONE"
+script = null
+
+[node name="Create Variable Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CREATE-VARIABLE"
+operation = ExtResource("3_drm31")
+
+[node name="Ask Value Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_ASK-VALUE"
+operation = ExtResource("29_ab06s")
+
+[node name="Assign Directy Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_ASSIGN-DIRECTLY"
+operation = ExtResource("20_guodn")
+
+[node name="Attach Log Note Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_ATTACH-LOG-NOTE"
+operation = ExtResource("10_8nnah")
+
+[node name="Compare Equality Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_COMPARE-EQUALITY"
+operation = ExtResource("21_v40io")
+
+[node name="Compare Integers Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_COMPARE-INTEGERS"
+operation = ExtResource("22_a4v8a")
+
+[node name="Control Flow Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_CONTROL-FLOW"
+operation = ExtResource("13_qwjhr")
+
+[node name="If Statement Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_IF-STATEMENT"
+operation = ExtResource("24_uoj86")
+
+[node name="Branch Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_BRANCH"
+operation = ExtResource("32_l8bki")
+
+[node name="Find All Players With Role Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_FIND-ALL-PLAYERS-WITH-ROLE"
+operation = ExtResource("24_1ppca")
+
+[node name="Foreach Loop Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_FOREACH-LOOP"
+operation = ExtResource("12_yw4de")
+
+[node name="Get Value Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_GET-VALUE"
+operation = ExtResource("14_pvg1q")
+
+[node name="Integer Operation Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_INTEGER-OPERATION"
+operation = ExtResource("27_mehgf")
+
+[node name="Logical Operation Pad" parent="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer" instance=ExtResource("4_12qbd")]
+layout_mode = 2
+theme_type_variation = &"OperationPad"
+text = "TK:OP_LOGICAL-OPERATION"
+operation = ExtResource("11_awsxh")
+
+[node name="Behavior Configuration CT" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 0.666667)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Behavior Configuration CT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Configuration CT/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 100
+
+[node name="Behavior Name Field" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("9_kcl32")]
+layout_mode = 2
+
+[node name="AWPCase APC Field" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("9_0odor")]
+visible = false
+layout_mode = 2
+
+[node name="AWPCase Creates Log Field" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_bx3tq")]
+visible = false
+layout_mode = 2
+
+[node name="Tags Field" type="VBoxContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("unusedItemsContent", "usedItemsContent", "newItemStringField")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("21_wmkko")
+theme_override_constants/separation = 20
+script = ExtResource("13_5ncit")
+unusedItemsContent = NodePath("Unused Tags/MarginContainer/Content")
+itemScene = ExtResource("13_ysqw3")
+usedItemsContent = NodePath("Used Tags/MarginContainer/Content")
+newItemStringField = NodePath("Add Tag Panel/MarginContainer/HBoxContainer/String Config Field")
+
+[node name="Label Panel" type="PanelContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field"]
+custom_minimum_size = Vector2(730, 120)
+layout_mode = 2
+theme_type_variation = &"TopPanel"
+
+[node name="Label" type="Label" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Label Panel"]
+custom_minimum_size = Vector2(730, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "TK:TAGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Used Tags" type="PanelContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field"]
+custom_minimum_size = Vector2(730, 140)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Used Tags"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Used Tags/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Unused Tags" type="PanelContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field"]
+custom_minimum_size = Vector2(730, 140)
+layout_mode = 2
+theme_type_variation = &"BottomPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Unused Tags"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Unused Tags/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Add Tag Panel" type="PanelContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="String Config Field" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel/MarginContainer/HBoxContainer" instance=ExtResource("24_03t3b")]
+custom_minimum_size = Vector2(480, 120)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Operation Config Window CT" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.14902, 0.14902, 0.666667)
+
+[node name="Panel" type="Panel" parent="Operation Config Window CT"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -650.0
+offset_right = 450.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+theme_type_variation = &"OperationConfigPanel"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Operation Config Window CT/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = -25.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Configs Content" type="VBoxContainer" parent="Operation Config Window CT/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Close Window Button" type="Button" parent="Operation Config Window CT"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 1610.0
+offset_right = 390.0
+offset_bottom = 1710.0
+theme_type_variation = &"OperationConfigDone"
+theme_override_font_sizes/font_size = 40
+text = "TK:DONE"
+
+[node name="Behavior Save Error CT" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vhjob")
+
+[node name="Panel" type="PanelContainer" parent="Behavior Save Error CT"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"MutedBigPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Save Error CT/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VboxContainer" type="VBoxContainer" parent="Behavior Save Error CT/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Warning Label" type="Label" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 55
+text = "TK:BEHAVIOR-CONTAINS-ERRORS_WARNING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Details Label" type="Label" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 45
+text = "Details are set programaticaly"
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Proceed Anyways HButton" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons" instance=ExtResource("30_pa6wk")]
+custom_minimum_size = Vector2(390, 100)
+layout_mode = 2
+size_flags_vertical = 1
+theme = null
+theme_override_font_sizes/font_size = 35
+text = "TK:REVERT-CHANGES-AND-SAVE"
+flat = true
+autowrap_mode = 3
+
+[node name="Mask" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Proceed Anyways HButton" index="0"]
+theme_type_variation = &"SmallPanel"
+
+[node name="Cancel Button" type="Button" parent="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons"]
+custom_minimum_size = Vector2(390, 100)
+layout_mode = 2
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 35
+text = "TK:CANCEL"
+autowrap_mode = 3
+
+[node name="Behavior Invalid Name CT" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vhjob")
+
+[node name="Panel" type="PanelContainer" parent="Behavior Invalid Name CT"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"MutedBigPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Behavior Invalid Name CT/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VboxContainer" type="VBoxContainer" parent="Behavior Invalid Name CT/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Warning Label" type="Label" parent="Behavior Invalid Name CT/Panel/MarginContainer/VboxContainer"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 55
+text = "TK:BEHAVIOR-NAME-IS-INVALID"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Cancel Button" type="Button" parent="Behavior Invalid Name CT/Panel/MarginContainer/VboxContainer"]
+custom_minimum_size = Vector2(780, 100)
+layout_mode = 2
+theme_type_variation = &"SmallButton"
+theme_override_font_sizes/font_size = 35
+text = "TK:CANCEL"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Top Buttons/Exit Button" to="." method="TrySave"]
+[connection signal="pressed" from="Top Buttons/Behvaiour Config Button" to="Behavior Configuration CT" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point" method="OpenBehWindow"]
+[connection signal="pressed" from="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point/MarginContainer/VBoxContainer/Header HBoxContainer/Edit Button Margin/Edit Button" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point" method="OpenBehWindow"]
+[connection signal="pressed" from="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons/Deselect All Button" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point" method="DeselectAllOperations"]
+[connection signal="Held" from="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Ini Entry Point" method="DeleteSelectedOperations"]
+[connection signal="pressed" from="Ini Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer/Done Button" to="Ini Behavior Window" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons/Deselect All Button" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point" method="DeselectAllOperations"]
+[connection signal="Held" from="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point" method="DeleteSelectedOperations"]
+[connection signal="pressed" from="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer/Done Button" to="Spec Behavior Window" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel/MarginContainer/HBoxContainer/Button" to="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field" method="AddNewItem"]
+[connection signal="pressed" from="Operation Config Window CT/Close Window Button" to="." method="CloseConfigWindow"]
+[connection signal="Held" from="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Proceed Anyways HButton" to="." method="OnExitAnywaysButton"]
+[connection signal="pressed" from="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Cancel Button" to="Behavior Save Error CT" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Behavior Invalid Name CT/Panel/MarginContainer/VboxContainer/Cancel Button" to="Behavior Invalid Name CT" method="set_visible" binds= [false]]
+
+[editable path="Ini Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton"]
+[editable path="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton"]
+[editable path="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Proceed Anyways HButton"]

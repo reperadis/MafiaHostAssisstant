@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b42j0b0fpswjq"]
+
+[ext_resource type="Script" path="res://Game part/Naming State/PlayerNamingCard.cs" id="1_1yp1c"]
+
+[node name="Name Card" type="Panel" node_paths=PackedStringArray("nameLineEdit")]
+custom_minimum_size = Vector2(850, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1yp1c")
+nameLineEdit = NodePath("LineEdit")
+
+[node name="Focus On Bottom Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -60.0
+offset_right = -15.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -150.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Focus On Bottom Button" to="." method="TrySwitchToNextCard"]

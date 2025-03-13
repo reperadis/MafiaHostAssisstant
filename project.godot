@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Mafia Host Assistant"
+config/name_localized={
+"en": "Mafia Host Assistant",
+"ru": "Помощник Ведущего Мафии"
+}
+run/main_scene="res://Scenes/Bootstrap.tscn"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="Mafia Host Assistant"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/label_font_auto_sizer/plugin.cfg", "res://addons/toggle_external_editor/plugin.cfg")
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Misc/Translations.en.translation", "res://Misc/Translations.ru.translation")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

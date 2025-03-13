@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsssicrvr2qps"]
+
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEDynamicStringConfigField.cs" id="1_ffdon"]
+[ext_resource type="PackedScene" uid="uid://dwyhvtb07vpbc" path="res://Config Fields/Behaviour Editor/BE Dynamic String Element.tscn" id="2_pq6cw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcjs2"]
+bg_color = Color(0.74902, 0.74902, 0.74902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdqw4"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ifoo"]
+bg_color = Color(0.54902, 0.54902, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344rh"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="Theme" id="Theme_jxoqc"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_rcjs2")
+Button/styles/hover = SubResource("StyleBoxFlat_gdqw4")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_5ifoo")
+Button/styles/normal = SubResource("StyleBoxFlat_rcjs2")
+Button/styles/pressed = SubResource("StyleBoxFlat_5ifoo")
+Label/colors/font_color = Color(0, 0, 0, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_344rh")
+
+[node name="BE Dynamic String Config Field" type="PanelContainer" node_paths=PackedStringArray("label", "elementsContent")]
+custom_minimum_size = Vector2(860, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_jxoqc")
+script = ExtResource("1_ffdon")
+label = NodePath("MarginContainer/VBoxContainer/Label")
+elementsContent = NodePath("MarginContainer/VBoxContainer/Content")
+dynamicStringScene = ExtResource("2_pq6cw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Label"
+horizontal_alignment = 1
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Add Constant Buttoned Label" type="Label" parent="MarginContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "TK:DYNAMIC-STRING-FIELD_ADD-TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Add Constant Button" type="Button" parent="MarginContainer/VBoxContainer/Buttons/Add Constant Buttoned Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+autowrap_mode = 3
+
+[node name="Add Dynamic Buttoned Label" type="Label" parent="MarginContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "TK:DYNAMIC-STRING-FIELD_ADD-VARIABLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Add Dynamic Button" type="Button" parent="MarginContainer/VBoxContainer/Buttons/Add Dynamic Buttoned Label"]
+show_behind_parent = true
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/Add Constant Buttoned Label/Add Constant Button" to="." method="AddString"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/Add Dynamic Buttoned Label/Add Dynamic Button" to="." method="AddVarRead"]

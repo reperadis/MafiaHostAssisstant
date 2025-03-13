@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl1qe4rxbteq1"]
+
+[ext_resource type="Theme" uid="uid://btntq1janxwaf" path="res://Linked HButton Light.tres" id="1_eu5h1"]
+[ext_resource type="Script" path="res://UI/LinkedHButton.cs" id="2_psned"]
+
+[node name="Linked HButton" type="Button" node_paths=PackedStringArray("progressBar")]
+clip_children = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_eu5h1")
+script = ExtResource("2_psned")
+progressBar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+show_percentage = false
+
+[connection signal="button_down" from="." to="." method="PointerDown"]
+[connection signal="button_up" from="." to="." method="PointerUp"]
+[connection signal="visibility_changed" from="." to="." method="OnVisibilityChanged"]

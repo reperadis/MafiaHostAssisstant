@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8nqvdrgfiexx"]
+
+[ext_resource type="Script" path="res://Game part/SelectablePlayerCardClone.cs" id="1_0d0ms"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="1_1wjkf"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="2_bf5kt"]
+
+[node name="Selectable Player Card Clone" type="Panel" node_paths=PackedStringArray("playerNameLabel", "playerRoleLabel", "checkmark")]
+custom_minimum_size = Vector2(900, 270)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_0d0ms")
+playerNameLabel = NodePath("Player Name Label")
+playerRoleLabel = NodePath("Role Activity HButton/LabelAutoSizer")
+checkmark = NodePath("Checkmark Texture Rect")
+
+[node name="Player Name Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("1_1wjkf")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 16
+_last_size_state = 1
+
+[node name="Role Activity HButton" parent="." instance=ExtResource("2_bf5kt")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 520.0
+offset_bottom = -20.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Checkmark Texture Rect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[editable path="Role Activity HButton"]

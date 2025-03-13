@@ -1,0 +1,921 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy0e0lx7lhhac"]
+
+[ext_resource type="Theme" uid="uid://jql7gqkmveql" path="res://Settings And Docs Part/Settings and Docs Light.tres" id="1_4cma3"]
+[ext_resource type="Script" path="res://Settings And Docs Part/Settings.cs" id="2_scpj0"]
+[ext_resource type="Texture2D" uid="uid://cifbj84idxyow" path="res://Graphics/ru.png" id="3_v5qfn"]
+[ext_resource type="Texture2D" uid="uid://dyqc1lmqm20yi" path="res://Graphics/gb.png" id="4_6c4r3"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="7_mhy74"]
+[ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="8_sug4w"]
+[ext_resource type="Script" path="res://UI/ColorEmbedLabel.cs" id="10_f2v2a"]
+
+[node name="Settings and Docs" type="Control" node_paths=PackedStringArray("themeSettingDropdown", "languageSettingsDropdown", "holdDurationLabel", "settingsTab", "generalDocsTab", "behaviorEditorDocsTab")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4cma3")
+script = ExtResource("2_scpj0")
+themeSettingDropdown = NodePath("Content Scroll/MarginContainer/Settings VBox/Theme Setting Container/Theme Setting/Dropdown")
+languageSettingsDropdown = NodePath("Content Scroll/MarginContainer/Settings VBox/Language Setting Container/Language Setting/Dropdown")
+ruFlagTexture = ExtResource("3_v5qfn")
+ukFlagTexture = ExtResource("4_6c4r3")
+holdDurationLabel = NodePath("Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/MarginContainer/HBoxContainer/Label")
+settingsTab = NodePath("Content Scroll/MarginContainer/Settings VBox")
+generalDocsTab = NodePath("Content Scroll/MarginContainer/General Docs VBox")
+behaviorEditorDocsTab = NodePath("Content Scroll/MarginContainer/Behavior Editor Docs VBox")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BGPanel"
+
+[node name="Tabs Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 140.0
+grow_horizontal = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Tabs Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tabs Scroll/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Close Button" type="Button" parent="Tabs Scroll/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "TK:DONE"
+
+[node name="Settings Button" type="Button" parent="Tabs Scroll/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "TK:SETTINGS"
+
+[node name="General Docs Button" type="Button" parent="Tabs Scroll/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "TK:GENERAL-DOCS"
+
+[node name="Behavior Editor Docs Button" type="Button" parent="Tabs Scroll/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "TK:BEH-EDITOR-DOCS"
+
+[node name="Content Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 100
+
+[node name="Settings VBox" type="VBoxContainer" parent="Content Scroll/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 150
+
+[node name="Hold Duration Setting" type="VBoxContainer" parent="Content Scroll/MarginContainer/Settings VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 45
+text = "TK:HOLD-DURATION-SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/MarginContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.5
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="Test Button" parent="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting" instance=ExtResource("7_mhy74")]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+text = "TK:TEST-ON-ME"
+
+[node name="Theme Setting Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Settings VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Theme Setting" type="HBoxContainer" parent="Content Scroll/MarginContainer/Settings VBox/Theme Setting Container"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Content Scroll/MarginContainer/Settings VBox/Theme Setting Container/Theme Setting"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 45
+text = "TK:THEME-SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Dropdown" parent="Content Scroll/MarginContainer/Settings VBox/Theme Setting Container/Theme Setting" instance=ExtResource("8_sug4w")]
+layout_mode = 2
+
+[node name="Language Setting Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Settings VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Language Setting" type="HBoxContainer" parent="Content Scroll/MarginContainer/Settings VBox/Language Setting Container"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Content Scroll/MarginContainer/Settings VBox/Language Setting Container/Language Setting"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 45
+text = "TK:LANGUAGE-SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Dropdown" parent="Content Scroll/MarginContainer/Settings VBox/Language Setting Container/Language Setting" instance=ExtResource("8_sug4w")]
+layout_mode = 2
+
+[node name="General Docs VBox" type="VBoxContainer" parent="Content Scroll/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Behavior Editor Docs VBox" type="VBoxContainer" parent="Content Scroll/MarginContainer"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(1032, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="General Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "TK:DOCS_GENERAL_HEADER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Errors List" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="SubHeader Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SubHeaderLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/SubHeader Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="Errors Sub Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/SubHeader Panel/MarginContainer"]
+custom_minimum_size = Vector2(940, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "TK:DOCS_ERRORS-HEADER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Empty Field Error Entry" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ErrorEntryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry/MarginContainer"]
+layout_mode = 2
+
+[node name="Name Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ErrorHeaderSubPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry/MarginContainer/VBoxContainer/Name Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Error Name Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry/MarginContainer/VBoxContainer/Name Panel/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_ERROR_EMPTY-FIELD_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Error Details Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Empty Field Error Entry/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "TK:DOCS_ERROR_EMPTY-FIELD_DETAILS"
+autowrap_mode = 3
+
+[node name="Incompatible New Type Error Entry" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ErrorEntryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry/MarginContainer"]
+layout_mode = 2
+
+[node name="Name Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ErrorHeaderSubPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry/MarginContainer/VBoxContainer/Name Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Error Name Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry/MarginContainer/VBoxContainer/Name Panel/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_ERROR_INCOMPATIBLE-TYPE_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Error Details Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Errors List/Incompatible New Type Error Entry/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "TK:DOCS_ERROR_INCOMPATIBLE-TYPE_DETAILS"
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/General Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Ask Value Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_ASK-VALUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_ASK-VALUE_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Write To Param Entry" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ErrorEntryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry/MarginContainer"]
+layout_mode = 2
+
+[node name="Name Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ErrorHeaderSubPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry/MarginContainer/VBoxContainer/Name Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Name Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry/MarginContainer/VBoxContainer/Name Panel/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_FIELD_WRITE-TO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Entry Details Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Write To Param Entry/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "TK:DOCS_ASK-VALUE_PARAM-DESCR_WRITE-TO"
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Ask Value Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Assign Directly Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_ASSIGN-DIRECTLY"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Control" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+script = ExtResource("10_f2v2a")
+FontSize = 40
+Text = "TK:DOCS_ASSIGN-DIRECTLY_DESCRIPTION"
+
+[node name="Write To Param Entry" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ErrorEntryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry/MarginContainer"]
+layout_mode = 2
+
+[node name="Name Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ErrorHeaderSubPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry/MarginContainer/VBoxContainer/Name Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Name Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry/MarginContainer/VBoxContainer/Name Panel/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_FIELD_WRITE-TO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Entry Details Label" type="Control" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Write To Param Entry/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+script = ExtResource("10_f2v2a")
+FontSize = 30
+Text = "TK:DOCS_ASSIGN-DIRECTLY_PARAM-DESCR_WRITE-TO"
+
+[node name="Value Param Entry" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ErrorEntryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry/MarginContainer"]
+layout_mode = 2
+
+[node name="Name Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ErrorHeaderSubPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry/MarginContainer/VBoxContainer/Name Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Name Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry/MarginContainer/VBoxContainer/Name Panel/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:VALUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Entry Details Label" type="Control" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Value Param Entry/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+script = ExtResource("10_f2v2a")
+FontSize = 30
+Text = "TK:DOCS_ASSIGN-DIRECTLY_PARAM-DESCR_VALUE"
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Assign Directly Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Control Flow Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_CONTROL-FLOW"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_CONTROL-FLOW_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Modes SubHeader Panel" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SubHeaderLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry/Modes SubHeader Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="Errors Sub Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry/Modes SubHeader Panel/MarginContainer"]
+custom_minimum_size = Vector2(940, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "TK:DOCS_CONTROL-FLOW_MODES"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Return Mode Description label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_CONTROL-FLOW_STOP-PROCESS"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Exit Block Mode Description label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_CONTROL-FLOW_EXIT-SCOPE"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Stop Cylce Mode Description label3" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_CONTROL-FLOW_STOP-CYCLE"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Skip Iteration Mode Description label4" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_CONTROL-FLOW_SKIP-ITERATION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Control Flow Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Find All Players With Role Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_FIND-ALL-PLAYERS-WITH-ROLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_FIND-ALL-PLAYERS-WITH-ROLE_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Find All Players With Role Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Foreach Loop Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_FOREACH-LOOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_FOREACH-LOOP_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Foreach Loop Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Get Value Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_GET-VALUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_GET-VALUE_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Get Value Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Highlight Player Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK:OP_HIGHLIGHT-PLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:DOCS_HIGHLIGHT-PLAYER_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Highlight Player Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[node name="Logical Operation Entry" type="VBoxContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Entry Label Container" type="PanelContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry"]
+layout_mode = 2
+theme_type_variation = &"EntryGroupLabelPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry/Entry Label Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Entry Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry/Entry Label Container/MarginContainer"]
+custom_minimum_size = Vector2(940, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "TK::DOCS_LOGICAL-OPERATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description Label" type="Label" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK::DOCS_LOGICAL-OPERATION_DESCRIPTION"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separation Line Container" type="MarginContainer" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="Content Scroll/MarginContainer/Behavior Editor Docs VBox/Logical Operation Entry/Separation Line Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_type_variation = &"SeparationLine"
+
+[connection signal="pressed" from="Tabs Scroll/MarginContainer/HBoxContainer/Close Button" to="." method="set_visible" binds= [false]]
+[connection signal="pressed" from="Tabs Scroll/MarginContainer/HBoxContainer/Settings Button" to="." method="SwitchToSettings"]
+[connection signal="pressed" from="Tabs Scroll/MarginContainer/HBoxContainer/General Docs Button" to="." method="SwtichToGeneralDocs"]
+[connection signal="pressed" from="Tabs Scroll/MarginContainer/HBoxContainer/Behavior Editor Docs Button" to="." method="SwtichToBehaviorEditorDocs"]
+[connection signal="pressed" from="Tabs Scroll/MarginContainer/HBoxContainer/Behavior Editor Docs Button" to="." method="_on_behavior_editor_docs_button_pressed"]
+[connection signal="value_changed" from="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/MarginContainer/HBoxContainer/HSlider" to="." method="SetHoldDuration"]
+[connection signal="ItemSelected" from="Content Scroll/MarginContainer/Settings VBox/Theme Setting Container/Theme Setting/Dropdown" to="." method="SetThemeMode"]
+[connection signal="ItemSelected" from="Content Scroll/MarginContainer/Settings VBox/Language Setting Container/Language Setting/Dropdown" to="." method="SetLocale"]
+
+[editable path="Content Scroll/MarginContainer/Settings VBox/Hold Duration Setting/Test Button"]

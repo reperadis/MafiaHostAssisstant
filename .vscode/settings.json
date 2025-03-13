@@ -1,0 +1,9 @@
+{
+    "editor.snippetSuggestions": "bottom",
+    "godotTools.editorPath.godot4": "c:\\Users\\Reper\\Desktop\\Godot_v4.3-stable_mono_win64\\Godot_v4.3-stable_mono_win64.exe",
+    "godotTools.lsp.serverPort": 6005,
+    "csvKeyAutocomplete.csvPath": "Misc/Translations.csv",
+    "[csv]": {
+        "editor.inlayHints.maximumLength": 0
+    }
+}

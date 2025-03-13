@@ -1,0 +1,63 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bqm4r87lxhdnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1mca"]
+bg_color = Color(0.909804, 0.909804, 0.909804, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1srq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0ure"]
+bg_color = Color(0.65, 0.65, 0.65, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n7yb"]
+bg_color = Color(0.55, 0.55, 0.55, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yom5n"]
+bg_color = Color(0.75, 0.75, 0.75, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57caj"]
+bg_color = Color(0.55, 0.55, 0.55, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psa2f"]
+bg_color = Color(0.909804, 0.909804, 0.909804, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no2db"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[resource]
+BGPanel/base_type = &"Panel"
+BGPanel/styles/panel = SubResource("StyleBoxFlat_y1mca")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_l1srq")
+Button/styles/hover = SubResource("StyleBoxFlat_k0ure")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_8n7yb")
+Button/styles/normal = SubResource("StyleBoxFlat_yom5n")
+Button/styles/pressed = SubResource("StyleBoxFlat_57caj")
+ItemPanel/base_type = &"PanelContainer"
+ItemPanel/styles/panel = SubResource("StyleBoxFlat_psa2f")
+LabelOne/base_type = &"Label"
+LabelOne/colors/font_color = Color(0.176471, 0.176471, 0.176471, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_no2db")

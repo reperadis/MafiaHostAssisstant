@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcwjetnids2ht"]
+
+[ext_resource type="Script" path="res://Config Fields/IntConfigField.cs" id="1_50agq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifo3w"]
+bg_color = Color(0.75, 0.75, 0.75, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is03f"]
+bg_color = Color(0.65, 0.65, 0.65, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdia8"]
+bg_color = Color(0.55, 0.55, 0.55, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6x2i"]
+bg_color = Color(0.75, 0.75, 0.75, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mce0v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_mn7v1"]
+Button/styles/focus = SubResource("StyleBoxFlat_ifo3w")
+Button/styles/hover = SubResource("StyleBoxFlat_is03f")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_cdia8")
+Button/styles/normal = SubResource("StyleBoxFlat_ifo3w")
+Button/styles/pressed = SubResource("StyleBoxFlat_cdia8")
+LineEdit/colors/caret_color = Color(0.2, 0.2, 0.2, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_y6x2i")
+Panel/styles/panel = SubResource("StyleBoxFlat_mce0v")
+
+[node name="Int Config Field" type="Panel" node_paths=PackedStringArray("lineEdit")]
+custom_minimum_size = Vector2(690, 180)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -92.5
+offset_right = 325.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_mn7v1")
+script = ExtResource("1_50agq")
+lineEdit = NodePath("Number Field")
+
+[node name="Increment Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -170.0
+offset_right = 170.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="Number Field" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(330, 160)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -170.0
+offset_right = 165.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "0"
+alignment = 1
+virtual_keyboard_type = 2
+select_all_on_focus = true
+caret_blink = true
+caret_mid_grapheme = true
+
+[node name="Decrement Button" type="Button" parent="."]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="pressed" from="Increment Button" to="." method="Increment"]
+[connection signal="text_submitted" from="Number Field" to="." method="ReadInputField"]
+[connection signal="pressed" from="Decrement Button" to="." method="Decrement"]

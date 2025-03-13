@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhnl7wtsncj27"]
+
+[ext_resource type="Script" path="res://Config Fields/NamedIntConfigField.cs" id="1_2iawk"]
+[ext_resource type="PackedScene" uid="uid://bcwjetnids2ht" path="res://Config Fields/Int Config Field.tscn" id="3_sv6so"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woun3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_8w4sn"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_woun3")
+
+[node name="Named Int Config Field" type="PanelContainer" node_paths=PackedStringArray("field")]
+custom_minimum_size = Vector2(730, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -152.0
+offset_right = 365.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_8w4sn")
+script = ExtResource("1_2iawk")
+field = NodePath("MarginContainer/VBoxContainer/Int Config Field")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Int Config Field" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_sv6so")]
+layout_mode = 2

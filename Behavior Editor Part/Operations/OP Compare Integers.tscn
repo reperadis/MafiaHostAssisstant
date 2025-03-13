@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72qf5d8hnp2g"]
+
+[ext_resource type="PackedScene" uid="uid://cua3huj5xk45l" path="res://Behavior Editor Part/Operations/OP Logical Operation.tscn" id="1_avd0j"]
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_CompareIntegers.cs" id="2_jffuq"]
+
+[node name="Compare Integers Operation" node_paths=PackedStringArray("operationLabel") instance=ExtResource("1_avd0j")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 900.0
+offset_bottom = 760.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("2_jffuq")
+operationLabel = NodePath("Content/MarginContainer/VBoxContainer/Operation Group/HBoxContainer/MarginContainer/HBoxContainer/Variable Name Label")
+
+[node name="Operation Label" parent="Content/MarginContainer/VBoxContainer/Label Container" index="0"]
+text = "TK:OP_COMPARE-INTEGERS"

@@ -1,0 +1,244 @@
+KEY,ru,en
+TK:MENU_START,Начать игру,Start game
+TK:MENU_CREATE,Создать,Create
+TK:MENU_DECK,Колода,Deck
+TK:MENU_BEHAVIOURS,Поведения,Behaviours
+
+TK:OP_CREATE-VARIABLE,Создать переменную,Create variable
+TK:OP_CREATE-PERSISTENT-VARIABLE,Создать устойчивую переменную,Create persistent variable
+TK:OP_CREATE-CONFIG,Создать настраиваемое поле,Create configurable field
+TK:OP_CREATE-SHARED-VARIABLE,Создать общую переменную,Create shared variable
+TK:OP_READ-SHARED-VARIABLE,Счесть общую переменную,Read shared variable
+
+TK:OP_ASSIGN-DIRECTLY,Присвоить вручную,Assign directly
+TK:OP_ASK-VALUE,Запросить значение,Ask value
+TK:OP_ATTACH-LOG-NOTE,Прикрепить заметку к записи,Attach note to log
+TK:OP_BRANCH,Ветвление,Branch
+TK:OP_COMPARE-EQUALITY,Проверить равенство,Compare equality
+TK:OP_COMPARE-INTEGERS,Сравненить числа,Compare integers
+TK:OP_CONTROL-FLOW,Изменить поток,Control flow
+TK:OP_FIND-ALL-PLAYERS-WITH-ROLE,Найти всех игроков с ролью,Find all players with role
+TK:OP_FOREACH-LOOP,Совместный цикл,Foreach loop
+TK:OP_GET-VALUE,Взять значение,Get value
+TK:OP_HIGHLIGHT-PLAYER,Подсветить игрока,Highlight player
+TK:OP_IF-STATEMENT,Условное выполнение,If statement
+TK:OP_IF-STATEMENT_ELSE,Иначе,Else
+TK:OP_IF-STATEMENT_ELSE-IF,Иначе если,Else if
+TK:OP_IF-STATEMENT_FULL-END,Конец,End
+TK:OP_INTEGER-OPERATION,Операция над числами,Integer operation
+TK:OP_LOGICAL-OPERATION,Логическая операция,Logical Operation
+
+TK:OP_FIELD_ADD-BRANCH,Добавить ветку,Add branch
+TK:OP_FIELD_BRANCH-LABEL,Бирка ветки,Branch label
+TK:OP_FIELD_CONDITION,Условие,Condition
+TK:OP_FIELD_CONTROL-DEPTH,Глубина управления,Control depth
+TK:OP_FIELD_ELEMENT,Элемент,Element
+TK:OP_FIELD_LEFT,Лево,Left
+TK:OP_FIELD_MESSAGE,Сообщение,Message
+TK:OP_FIELD_MODE,Режим,Mode
+TK:OP_FIELD_OPERATION,Операция,Operation
+TK:OP_FIELD_READ-FROM,Счесть с,Read from
+TK:OP_FIELD_RETURN,Вернуть,Return
+TK:OP_FIELD_RIGHT,Право,Right
+TK:OP_FIELD_ROLE-NAME,Имя роли,Role name
+TK:OP_FIELD_VARNAME,Имя переменной,Variable name
+TK:OP_FIELD_VARTYPE,Тип переменной,Variable type
+TK:OP_FIELD_WRITE-TO,Записать в,Write to
+TK:OP_FIELD_MODE_STOP-PROCESS,Остановить процесс,Stop process
+TK:OP_FIELD_MODE_EXIT-SCOPE,Прервать область,Exit scope
+TK:OP_FIELD_MODE_SKIP-ITERATION,Пропустить итерацию,Skip iteration
+TK:OP_FIELD_MODE_STOP-CYCLE,Прервать цикл,Stop cycle
+TK:OP_FIELD_ELEMENT-NAME,Имя переменной-элемента,Element variable name
+
+TK:GET-VALUE_ABSOLUTE,Модуль,Absolute value
+TK:GET-VALUE_DECREMENTED,Уменьшенное на 1,Decremented by 1
+TK:GET-VALUE_INCREMENTED,Увеличенное на 1,Incremented by 1
+TK:GET-VALUE_INVERSE-VAUE,Обратное значение,Inverse value
+TK:GET-VALUE_IS-ALIVE,Жив,Is alive
+TK:GET-VALUE_PLAYERS,Игроки,Players
+
+TK:VARTYPE_BOOL,Булев,Bool
+TK:VARTYPE_INT,Число,Integer
+TK:VARTYPE_STRING,Строка,String
+TK:VARTYPE_PLAYER,Игрок,Player
+TK:VARTYPE_UNION,Объединение,Union
+TK:VARTYPE_LIST,Список,List
+TK:VARTYPE_LIST-BOOL,Список булев,List of bools
+TK:VARTYPE_LIST-INT,Список чисел,List of integers
+TK:VARTYPE_LIST-STRING,Список строк,List of strings
+TK:VARTYPE_LIST-PLAYER,Список игроков,List of players
+
+TK:OPERATION_CONJUNCTION,Конъюнкция,Conjunction
+TK:OPERATION_DISJUNCTION,Дизъюнкция,Disjunction
+TK:OPERATION_EXCLUSIVE-DISJUNCTION,Исключающая дизъюнкция,Exclusive disjunction
+TK:OPERATION_IMPLICATION,Импликация,Implication
+TK:OPERATION_CONVERSE-IMPLICATION,Обратная импликация,Converse implication
+TK:OPERATION_EQUIVALENCE,Эквиваленция,Equivalence
+TK:OPERATION_NON-CONJUNCTION,Отрицание конъюнкции,Non-conjunction
+TK:OPERATION_NON-DISJUNCTION,Отрицание дизъюнкции,Non-disjunction
+TK:OPERATION_NONIMPLICATION,Отрицание импликации,Non-implication
+TK:OPERATION_CONVERSE-NONIMPLICATION,Отрицание обр. импликации,Conv. non-implication
+
+TK:BEHAVIOUR-CONFIG_CREATE-LOG,Создавать запись в журнале,Create journal entry
+TK:BEHAVIOUR-CONFIG_ACCEPTED-PLAYER-COUNT,Принимаемое количество игроков,Accepted players count
+TK:BEHAVIOUR-CONFIG_BEHAVIOUR-NAME,Название поведения,Behaviour name
+
+TK:DYNAMIC-STRING-FIELD_ADD-TEXT,Добавить текст,Add text
+TK:DYNAMIC-STRING-FIELD_ADD-VARIABLE,Добавить переменную,Add variable
+
+TK:WAKING-ALGORYTHM,Алгоритм просыпания,Waking algorythm
+TK:ACTIVE-ACTION-WITH-PLAYER,Активное действие с игроком,Active action with player
+TK:PASSIVE-ACTION-WITH-PLAYER,Пассивное действие с игроком,Passive action with player
+TK:PASSIVE-ACTION-WITH-UNION,Пассивное действие с объединением,Passive action with union
+
+TK:BACK,Назад,Back
+TK:DONE,Готово,Done
+TK:CANCEL,Отмена,Cancel
+TK:FALSE,Ложь,False
+TK:NAME,Название,Name
+TK:NEXT,Далее,Next
+TK:NIGHT,Ночь,Night
+TK:PLAYER,Игрок,Player
+TK:ROLE,Роль,Role
+TK:ROLE-SHOW_HIDDEN,"Удерживайте, чтобы просмотреть роль","Hold to see your role"
+TK:ROLE-SHOW_SHOWING,"Удерживайте, чтобы скрыть","Hold to hide"
+TK:TAGS,Метки,Tags
+TK:TARGETS,Цели,Targets
+TK:TRUE,Истина,True
+TK:VALUE,Значение,Value
+TK:VARIABLE,Переменная,Variable
+TK:FILE-OVERRIDE-WARNING,Объект с таким именем уже существует и будет переписан!,An object with the same name already exists and will be overriden!
+
+TK:BEHAVIOR-NAME,Название поведения,Behavior name
+TK:BEHAVIOR-NAME-IS-INVALID,Недопустимое название поведения!,Behavior name is invalid!
+TK:BEHAVIOR-CONTAINS-ERRORS_WARNING,Поведение содержит ошибки!,The behavior contains errors!
+TK:BEHAVIOR-CONTAINS-ERRORS_CAN-SAVE,"Оно всё равно может быть сохранено, но не может быть использовано, пока ошибки не будут исправлены.","It can still be saved, but cannot be used until the errors are fixed."
+TK:BEHAVIOR-CONTAINS-ERRORS_CANNOT-SAVE,"Оно не может быть сохранено, пока ошибки не будут исправлены.","It cannot be saved until the errors are fixed."
+TK:REVERT-CHANGES-AND-EXIT,Отменить изменения и выйти,Revert changes and exit
+TK:SAVE-ANYWAY,Всё равно сохранить,Save anyway
+
+TK:INITIALIZATION,Инициализация,Initialization
+TK:ACTION,Действие,Action
+TK:EVALUATE,Вычислить,Evaluate
+
+TK:ROLE-NAME,Имя роли,Role name
+TK:ROLE-DESCRIPTION,Описание роли, Role description
+TK:CONFIGURABLE-VARIABLES,Настраиваемые переменные,Configurable variables
+TK:ACCESSED-SHARED-VARIABLES,Запрошенные общие переменные,Accessed shared variables
+TK:CREATED-SHARED-VARIABLES,Созданные общие переменные,Created shared variables
+
+TK:SETTINGS,Настройки,Settings
+TK:GENERAL-DOCS,Общаяя документция,General documentation
+TK:BEH-EDITOR-DOCS,Документция по редактору поведений,Behavior editor documentation
+
+TK:HOLD-DURATION-SETTING,Длительность удержания кнопок,Button hold duration
+TK:TEST-ON-ME,Проверь на мне!,Test on me!
+
+TK:THEME-SETTING,Тема,Theme
+TK:LIGHT-THEME,Светлая тема,Light theme
+TK:DARK-THEME,Тёмная тема,Dark theme
+TK:AUTO-THEME,Определять автоматически,Auto
+
+TK:LANGUAGE-SETTING,Язык,Language
+TK:RUSSIAN,Русский,Russian
+TK:ENGLISH,Английский,English
+
+
+TK:FTS_SELECT-LANGUAGE,Выберете язык,Select your language
+TK:FTS_THIS-IS-NOT-MAFIA-ONLINE,"Это приложение – не ""Мафия Онлайн"" или ""Замена ведущего Мафии"", а именно ""Помощник ведущего Мафии"".","This app is not ""Mafia Online"" or ""Mafia host Replacement"", but exactly ""Mafia host Assistant""."
+TK:FTS_BE-IS-NOT-OBLIGATORY,"Приложение наделено так называемым ""редактором поведений"", который позволяет создавать собственные роли с особыми свойствами, однако использовать его вовсе не обязательно.","The application has a so-called ""behavior editor"", which allows you to create your own roles with special properties, but using it is not at all obligatory."
+TK:FTS_DOCS-ARE-BY-SETTINGS,"Более подробно об этом приложении можно узнать во встроенной документации, находящейся там же, где настройки.","More details about this application can be found in the built-in documentation, located in the same place as the settings."
+TK:FTS_TO-MENU,В меню,To menu
+
+
+
+TK:DOCS_GENERAL_HEADER,Общее,General
+
+TK:DOCS_TERMS_HEADER,Термины,Terms
+TK:DOCS_TERMS_FLOW_NAME,Поток,Flow
+TK:DOCS_TERMS_FLOW_DESCR,"Порядок, в котором операции выполняются в Поведении. По умолчанию операции выполняются последовательно сверху вниз, но некоторые операции могут изменить этот порядок.","The order in which operations are executed in a Behavior. By default, operations run sequentially from top to bottom, but this order can be modified by some operations."
+TK:DOCS_TERMS_SCOPE_NAME,Область,Scope
+TK:DOCS_TERMS_SCOPE_DESCR,"Группа операций, которые рассматриваются как единое целое",A group of operations that are treated as a single unit
+TK:DOCS_TERMS_CYCLE-SCOPE_NAME,Цикличная область,Cylce scope
+TK:DOCS_TERMS_CYCLE-SCOPE_DESCR,"Область, которая может выполнять свои операции несколько раз. Аналогично область, созданная операциями ""Совместный цикл"" или ""Повторить"".","A scope that can execute its operations multiple times. Likewise a scope that is created by ""Foreach loop"" or ""Repeat"" operations."
+TK:DOCS_TERMS_ITERATION_NAME,Итерация,Iteration
+TK:DOCS_TERMS_ITERATION_DESCR,Однократное выполнение всех операций в цикличной области.,A single execution of all operations within a cycle scope.
+
+TK:DOCS_VARIABLES_GENERAL,"TODO","TODO"
+
+
+TK:DOCS_VARIABLES_TYPES-HEADER,Типы переменных,Variable types
+
+TK:DOCS_VARIABLES_TYPE-DETAILS_BOOL,"Переменная этого типа принимает одно из двух значений: Истина, либо Ложь. Значение по умолчанию – Ложь.","Variable of this type takes one of the two values: True or False. The default value is False."
+TK:DOCS_VARIABLES_TYPE-DETAILS_INT,"Переменная этого типа есть целое неотрицательное число. Значение по умолчанию – ноль.","A variable of this type is a non-negative integer. The default value is zero."
+TK:DOCS_VARIABLES_TYPE-DETAILS_STRING,"Переменная этого типа есть набор произвольных символов, напрмер ""Мирный житель"" (здесь кавычки не являются частью значения, но в общем случае могут её быть). Значение по умолчанию – пустой набор, то есть """".","A variable of this type is a set of arbitrary characters, for example ""Innocent citizen"" (here the quotation marks are not part of the value, but in general they can be). The default value is an empty set, which is """"."
+TK:DOCS_VARIABLES_TYPE-DETAILS_PLAYER,"Переменная этого типа представляет собой игрока, а так же его роль и карточку, во время игры","Variable of this type represents a player, as well as their role and card, during the game"
+TK:DOCS_VARIABLES_TYPE-DETAILS_UNION,"TODO","TODO"
+TK:DOCS_VARIABLES_TYPE-DETAILS_LIST,"Общее название для четырёх типов переменных. Переменные этих типов представляют собой набор значений одного типа (Булев, Число, Строка или Игрок)","A common name for four types of variables. Variables of those types are lists of value of a single type (Bool, Int, String, or Player)"
+
+
+TK:DOCS_ERRORS-HEADER,Ошибки,Errors
+TK:DOCS_ERROR_EMPTY-FIELD_TITLE,Поле не может быть пустым,Field cannot be empty
+TK:DOCS_ERROR_EMPTY-FIELD_DETAILS,"Появляется каждый раз когда поле, принимающее переменную, оказывается пустым. Для решения необходимо выбрать подходящую по типу переменную. Возможно, потребуется создать новую.","Appears every time a field accepting a variable becomes empty. To solve this, you need to select a variable the appropriate type. You may need to create a new one."
+TK:DOCS_ERROR_INCOMPATIBLE-TYPE_TITLE,Операция несовместима с новым типом переменной,Operation is not compatible with the new type of variable
+TK:DOCS_ERROR_INCOMPATIBLE-TYPE_DETAILS,"Появляется каждый раз, когда тип переменной, выбранной в каком-либо поле, меняется и становится отличным от типа, ожидаемого в этом поле. Для решения необходимо изменить тип переменной на совместимый, либо выбрать в поле другую переменную.","Appears every time a variable, referenced by a field, changes its type and becomes different from all of the types expected in the field. To solve, you need to either change the variable type to a compatible one, or select another variable"
+
+TK:DOCS_PARAMETERS-HEADER,Параметры,Parameters
+TK:DOCS_PARAM-DESCR_MESSAGE,"Сообщение, которое будет выведено ведущему","The message that will be displayed to the host"
+
+TK:DOCS_VAR-CREATORS_HEADER,Создатели переменных,Variable creators
+TK:DOCS_VAR-CREATORS_DESCRIPTION,"Операции, создающие переменные с указанным типом и название","Operations which create variables of the specified type and name"
+TK:DOCS_VAR-CREATORS_CREATE-VARIABLE_DESCRIPTION,"Создаёт самую обычную переменную, ",TODO
+
+
+TODO: OP_ATTACH-LOG-NOTE,TODO,TODO
+
+TK:DOCS_ASK-VALUE_DESCRIPTION,"Принимает переменную любого типа, во время игры просит ведущего вручную установить её значение.","Accepts a variable of any type, during the game asks the host to set its value manualy."
+TK:DOCS_ASK-VALUE_PARAM-DESCR_WRITE-TO,"Переменная, которой ведущий присвоит значение.","The variable, which the host will assign a value to."
+TODO: Attach a screenshot of the operation in action,,
+
+TK:DOCS_ASSIGN-DIRECTLY_DESCRIPTION,"Позволяет вручную установить конкретное значение выбранной переменной. Не принимает переменные типа [e][player]Игрок[/player][/e] или [e][union]Объединение[/union][/e]","Allows manualy setting the value of the chosen variable. Does not accept variables of type [e][player]Player[/player][/e] or [e][union]Union[/union][/e]"
+TK:DOCS_ASSIGN-DIRECTLY_PARAM-DESCR_WRITE-TO,"Переменная, которой будет присвоено значение. Не может быть типа [e][player]Игрок[/player][/e] либо [e][union]Объединение[/union][/e].","The variable to which the value will be assigned. Cannot be of type [e][player]Player[/player][/e] or [e][union]Union[/union][/e]."
+TK:DOCS_ASSIGN-DIRECTLY_PARAM-DESCR_VALUE,"Значение, которое будет присвоено данной переменной. Тип равен типу переменной","The value that will be assigned to this variable. The type is equal to the type of the variable"
+TK:DOCS_ASSIGN-DIRECTLY_INCOMPATIBLE-VALUE-TYPE-ERROR,"Появляется каждый раз, когда тип переменной – [e][player]Игрок[/player][/e] либо [e][union]Объединение[/union][/e].","Appears every time the variable type is either [e][player]Player[/player][/e] or [e][union]Union[/union][/e]."
+
+TODO: OP_BRANCH,TODO,TODO
+TODO: OP_COMPARE-EQUALITY,TODO,TODO
+TODO: OP_COMPARE-INTEGERS,TODO,TODO
+
+TK:DOCS_CONTROL-FLOW_DESCRIPTION,"Позволяет контролировать порядок выполнения операций особым образом, зависящим от выбранного режима","Allows you to control the order of operations in a special way, depending on the selected mode"
+TK:DOCS_CONTROL-FLOW_MODES,Режимы,Modes
+TK:DOCS_CONTROL-FLOW_STOP-PROCESS,"Режим ""Остановить процесс"" полностью прерывает выполнение Поведения. Если редактируемое Поведение – Алгоритм Просыпания, то операция в этом режиме принимает переменную типа [e][bool]Булев[/bool][/e]","The ""Stop process"" mode will completely abort the execution of the Behavior. If the edited Behavior is a Waking Algorithm, then the operation in this mode takes a variable of type [e][bool]Bool[/bool][/e]"
+TK:DOCS_CONTROL-FLOW_EXIT-SCOPE,"Режим ""Прервать область"" прерывает исполнение родительских областей. Статический параметр ""Глубина управления"" позваляет указать, TODO","The ""Exit scope"" mode aborts the execution (""breaks out"") of the parent scopes. The ""Control depth"" static parameter allows you to specify how many ""layers"" of scopes to break. The parameter cannot be less than 1 or greater than the amount of scopes counting from the operation out to the first cycle scope or the root scope. For example, if the Control depth is set to 2, the operation will break the scope it is in and the scope the operation that defines this scope is in."
+TK:DOCS_CONTROL-FLOW_STOP-CYCLE,"Режим ""Прервать цикл"" прерывает исполнение родительских циклов. Статический параметр ""Глубина управления"" устанавливает TODO",TODO
+TK:DOCS_CONTROL-FLOW_SKIP-ITERATION,"Режим ""Пропустить итерацию"" работает аналогично оператору ""continue"" во многих языках программирования, но с дополнительной возможностью действовать на внешние циклы. Когда [e]Глубина управления[/e] равна 1, операция застявляет перейти к следующей итерации текущего цикла, прерывая все текущие области до области целевого цикла. Когда глубина контроля больше, он полностью завершает все внутренние области и циклы и переходит к следующей итерации целевого цикла.","The ""SKIP-ITERATION"" mode works like the ""continue"" statement in many programming languages, but with additional power to target outer loops. When [e]Control depth[/e] is 1, operation simply skips to the next iteration of the current loop, breaking any current scopes out to the scope of the target loop. When flowControlDepth is greater, it terminates all inner scopes and loops completely and skips to the next iteration of the target loop."
+TK:DOCS_CONTROL-FLOW_PARAM-DESCR_CONTROL-DEPTH,"Несёт разное значение в зависимости от выбранного режима (см. выше)","Has different meaning depending on the selected mode (see above)"
+TK:DOCS_CONTROL-FLOW_PARAM-DESCR_RETURN,"Переменная, значение которой определяет, будет ли TODO",
+TODO,Control flow has Parameters and Errors,Implement their documentation
+
+TK:DOCS_FIND-ALL-PLAYERS-WITH-ROLE_DESCRIPTION,"Находит всех игроков с указанной [e][string]ролью[/string][/e], занося их в выбранный [e][list]список[/list][/e]. Предыдущее содержимое [e][list]списка[/list][/e] очищается","Finds all players with the specified [e][string]role[/string][/e] and adds them to the [e][list]list[/list][/e]. The previous contents of the [e][list]list[/list][/e] are cleared"
+TK:DOCS_FIND-ALL-PLAYERS-WITH-ROLE_PARAM-DESCR_WRITE-TO,"[e][list]Список[/list][/e], в который будут записаны все игроки с заданной [e][string]ролью[/string][/e]","The [e][list]list[/list][/e], to which all players of the chosen [e][string]role[/string][/e] will be added"
+TK:DOCS_FIND-ALL-PLAYERS-WITH-ROLE_PARAM-DESCR_ROLE-NAME,"Все игроки с этой [e][string]ролью[/string][/e] будут занесены в [e][list]список[/list][/e]","All the players with this role will be added to the [e][list]list[/list][/e]."
+
+TK:DOCS_FOREACH-LOOP_DESCRIPTION,"Создаёт цкиличную область и переменную в ней. Тип переменной определяется автоматически. Область исполняется ровно столько раз, сколько есть элементов в указанном [e][list]списке[/list][/е]. В каждой итерации переменная принимает следующее по [e][list]списку[/list][/е] значение.","Creates a cycle scope and a variable in it. The variable type is determined automatically. The region is executed exactly as many times as there are elements in the specified [e][list]list[/list][/e]. In each iteration, the variable takes the next value in the [e][list]list[/list][/e]."
+TK:DOCS_FOREACH-LOOP_PARAM-DESCR_VAR-NAME,"Имя переменной, которая будет хранить в себе значение из [e][list]списка[/list][/е] для нынешней итерации.","The name of the variable that will store the value from the [e][list]list[/list][/e] for the current iteration."
+
+TK:DOCS_GET-VALUE_DESCRIPTION,"Извлекает (копирует) определенное свойство или характеристику из переменной и сохраняет его в другой переменной. Если первая переменная равна [e][null]@Null[/null][/e], записывается соответствующее типу значение по умолчанию.","Extracts (copies) a specific property or characteristic from a variable and stores it in another variable. If the source variable is [e]@Null[/e], a type-appropriate default value is written."
+TK:DOCS_GET-VALUE_PARAM-DESCR_READ-FROM,"Переменная, из которой будет извлечено значение","The variable to extract the value from"
+TK:DOCS_GET-VALUE_PARAM-DESCR_VALUE,"Название значения, которое будет извлечено","The name of the value to extract"
+TK:DOCS_GET-VALUE_PARAM-DESCR_WRITE-TO,"Переменная, в которую будет записано извлечённое значение","The variable to which the extracted value will be written"
+TODO: list all of the operation's possible VALUEs, for every possible type, of the READ-FROM variable
+
+TK:DOCS_HIGHLIGHT-PLAYER_DESCRIPTION,"Во время игры подсвечивает выбранного [e][player]игрока[/player][/e] на короткое вермя","During the game highlights the selected [e][player]player[/player][/e] for a short moment"
+TK:DOCS_HIGHLIGHT-PLAYER_PARAM-DESCR_PLAYER,"[e][player]Игрок[/player][/e], карточка которого будет подсвечена","The [e][player]player[/player][/e] whose card will be highlighted"
+
+TODO: OP_IF-STATEMENT,TODO,TODO
+TODO: OP_INTEGER-OPERATION,TODO,TODO
+
+TK:DOCS_LOGICAL-OPERATION_DESCRIPTION,"Совершает выбранную логическую операцию над двумя переменными типа [e][bool]Буль[/bool][/e], записывая результат в третью переменную (первые две остаются без изменений)","Performs a logical operation on the two selected variables of type [e][bool]Bool[/bool][/e] and writes the result to the third one (the first two are left unchanged)"
+TK:DOCS_LOGICAL-OPERATION_PARAM-DESCR_WRITE-TO,"Переменная, в которую будет записан результат логической операции","The variable to which the result of the logical operation will be written"
+TK:DOCS_LOGICAL-OPERATION_PARAM-DESCR_LEFT,"Левый операнд (аргумент) операции","The left operand for the operation"
+TK:DOCS_LOGICAL-OPERATION_PARAM-DESCR_OPERATION,"Логическая операция, которая будет совершена","The logical operations to execute"
+TK:DOCS_LOGICAL-OPERATION_PARAM-DESCR_RIGHT,"Правый операнд (аргумент) операции","The right operand for the operation"
+TK:DOCS_LOGICAL-OPERATION_SUPPORTED-OPERATIONS-HEADER,"Поддерживаемые операции","Supported operations"
+TODO: Do not forget, to add pictures with truth tables, for all 10 operations

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfe8dg1k5loh1"]
+
+[ext_resource type="Script" path="res://Config Fields/Game/NamedPlayerSelectionField.cs" id="1_pwu85"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_o3gd7"]
+
+[node name="Player Config Field" type="PanelContainer"]
+custom_minimum_size = Vector2(730, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -92.5
+offset_right = 365.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_pwu85")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(730, 75)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_o3gd7")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 16
+_last_size_state = 1
+
+[node name="Player Options Content" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2

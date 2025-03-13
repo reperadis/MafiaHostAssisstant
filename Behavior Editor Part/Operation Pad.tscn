@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1et6gkkcf55m"]
+
+[ext_resource type="Script" path="res://Behavior Editor Part/OperationPad.cs" id="1_rou3y"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_wx44b"]
+
+[node name="Operation Pad" type="Button"]
+custom_minimum_size = Vector2(400, 150)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_rou3y")
+
+[node name="Operation Name Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_wx44b")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 0
+_last_size_state = 1

@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8w64s3oxbrmy"]
+
+[ext_resource type="Script" path="res://Role Editor Part/RoleActionPanel.cs" id="1_u030r"]
+[ext_resource type="PackedScene" uid="uid://dxdxc2w5gcsf2" path="res://Config Fields/String Config Field.tscn" id="2_wprfm"]
+[ext_resource type="Script" path="res://BehaviorSelectionPanel.cs" id="3_x776w"]
+[ext_resource type="PackedScene" uid="uid://c7avlvmkvt61o" path="res://Config Fields/Item.tscn" id="4_qyxxv"]
+[ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="5_up6bk"]
+
+[node name="Role Action Panel" type="PanelContainer" node_paths=PackedStringArray("decorativeNameField", "actionPanel", "waPanel")]
+custom_minimum_size = Vector2(1000, 0)
+size_flags_horizontal = 4
+script = ExtResource("1_u030r")
+decorativeNameField = NodePath("MarginContainer/VBoxContainer/String Config Field")
+actionPanel = NodePath("MarginContainer/VBoxContainer/Action Selection Panel")
+waPanel = NodePath("MarginContainer/VBoxContainer/WA Selection Panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="String Config Field" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_wprfm")]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+
+[node name="Action Selection Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("label", "dropdown", "configsGroupLabel", "configsContent", "accessedVarsGroupLabel", "accessedVariablesContent", "createdVarsGroupLabel", "createdVariablesContent")]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("3_x776w")
+itemScene = ExtResource("4_qyxxv")
+label = NodePath("MarginContainer/VBoxContainer/Label")
+dropdown = NodePath("MarginContainer/VBoxContainer/Dropdown")
+configsGroupLabel = NodePath("MarginContainer/VBoxContainer/Configs Group Label")
+configsContent = NodePath("MarginContainer/VBoxContainer/Configs")
+accessedVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Accessed Vars Group Label")
+accessedVariablesContent = NodePath("MarginContainer/VBoxContainer/Accessed Vars")
+createdVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Created Vars Group Label")
+createdVariablesContent = NodePath("MarginContainer/VBoxContainer/Created Vars")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Action Selection Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Dropdown" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer" instance=ExtResource("5_up6bk")]
+custom_minimum_size = Vector2(700, 120)
+layout_mode = 2
+
+[node name="Configs Group Label" type="Label" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Configs" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Accessed Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Accessed Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Created Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Created Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Action Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WA Selection Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("label", "dropdown", "configsGroupLabel", "configsContent", "accessedVarsGroupLabel", "accessedVariablesContent", "createdVarsGroupLabel", "createdVariablesContent")]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("3_x776w")
+itemScene = ExtResource("4_qyxxv")
+label = NodePath("MarginContainer/VBoxContainer/Label")
+dropdown = NodePath("MarginContainer/VBoxContainer/Dropdown")
+configsGroupLabel = NodePath("MarginContainer/VBoxContainer/Configs Group Label")
+configsContent = NodePath("MarginContainer/VBoxContainer/Configs")
+accessedVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Accessed Vars Group Label")
+accessedVariablesContent = NodePath("MarginContainer/VBoxContainer/Accessed Vars")
+createdVarsGroupLabel = NodePath("MarginContainer/VBoxContainer/Created Vars Group Label")
+createdVariablesContent = NodePath("MarginContainer/VBoxContainer/Created Vars")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/WA Selection Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Dropdown" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer" instance=ExtResource("5_up6bk")]
+custom_minimum_size = Vector2(700, 120)
+layout_mode = 2
+
+[node name="Configs Group Label" type="Label" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Configs" type="VBoxContainer" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Accessed Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Accessed Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Created Vars Group Label" type="Label" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Created Vars" type="VBoxContainer" parent="MarginContainer/VBoxContainer/WA Selection Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2

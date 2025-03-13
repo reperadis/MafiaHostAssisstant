@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwyhvtb07vpbc"]
+
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEDynamicStringElement.cs" id="1_mswhi"]
+[ext_resource type="PackedScene" uid="uid://dxdxc2w5gcsf2" path="res://Config Fields/String Config Field.tscn" id="2_r0qqi"]
+[ext_resource type="PackedScene" uid="uid://cfjj6dmexs45s" path="res://Config Fields/Behaviour Editor/Type Search Field.tscn" id="3_ryf6x"]
+
+[node name="Dynamic String Element" type="MarginContainer" node_paths=PackedStringArray("fieldContent")]
+editor_description = "The only item with a theme is the button with the cross. Their styles are taken from Dynamic String Field, which is always the parent."
+custom_minimum_size = Vector2(840, 0)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_mswhi")
+fieldContent = NodePath("HBoxContainer")
+stringFieldScene = ExtResource("2_r0qqi")
+typeSearchFieldScene = ExtResource("3_ryf6x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Remove Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "x"

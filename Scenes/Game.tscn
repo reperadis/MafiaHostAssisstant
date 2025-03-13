@@ -1,0 +1,677 @@
+[gd_scene load_steps=19 format=3 uid="uid://bd6p2f6abkdv"]
+
+[ext_resource type="Script" path="res://Game part/GameSceneManager.cs" id="1_wothy"]
+[ext_resource type="Script" path="res://Game part/Naming State/PlayerNamingStateManager.cs" id="2_ptwtk"]
+[ext_resource type="Script" path="res://Game part/RolePassingStateManager.cs" id="3_mb7yp"]
+[ext_resource type="Script" path="res://Game part/GameStateManager.cs" id="4_2nqv3"]
+[ext_resource type="PackedScene" uid="uid://djmir7n50jtl8" path="res://Config Fields/Named String Field.tscn" id="4_8w1mx"]
+[ext_resource type="PackedScene" uid="uid://b42j0b0fpswjq" path="res://Game part/Naming State/Name Card.tscn" id="4_krrv2"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="5_7mr4t"]
+[ext_resource type="PackedScene" uid="uid://cukpaj6sjdr33" path="res://Game part/Naming State/Additional Name Card.tscn" id="5_e7vvk"]
+[ext_resource type="Script" path="res://Game part/Tabs/NotificationWindow.cs" id="5_ypl1u"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="6_7yxc0"]
+[ext_resource type="Script" path="res://Game part/GameJournalManager.cs" id="8_y1a13"]
+[ext_resource type="PackedScene" uid="uid://cja4d6j8jtoul" path="res://Game part/Wakeable Handler Tab.tscn" id="10_n0gvx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8t76"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ky6n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryis7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vayle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmn80"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvrvf"]
+
+[node name="Game" type="Control" node_paths=PackedStringArray("playerNamingStateManager", "rolePassingStateManager")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wothy")
+playerNamingStateManager = NodePath("Player Naming State")
+rolePassingStateManager = NodePath("Role Passing State")
+
+[node name="Player Naming State" type="Control" parent="." node_paths=PackedStringArray("nameCardsContent", "addCardButton", "namesIOOptionSelectionCT", "namesSavePanel", "namesLoadPanel", "namesLoadOptionsContent", "namesSaveNameField")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ptwtk")
+nameCardsContent = NodePath("Name Cards Scroll/VBoxContainer")
+addCardButton = NodePath("Name Cards Scroll/VBoxContainer/Add Name Button")
+namesIOOptionSelectionCT = NodePath("Color Tilt")
+namesSavePanel = NodePath("Color Tilt/Save Names Panel")
+namesLoadPanel = NodePath("Color Tilt/Load Names Panel")
+namesLoadOptionsContent = NodePath("Color Tilt/Load Names Panel/Options Scroll Container/VBoxContainer")
+namesSaveNameField = NodePath("Color Tilt/Save Names Panel/MarginContainer/VBoxContainer/Named String Config Field")
+holdableButtonScene = ExtResource("6_7yxc0")
+playerNameCardScene = ExtResource("4_krrv2")
+additionalPlayerNameCardScene = ExtResource("5_e7vvk")
+
+[node name="Background" type="ColorRect" parent="Player Naming State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Load Names Button" type="Button" parent="Player Naming State"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 20.0
+offset_right = -25.0
+offset_bottom = 130.0
+grow_horizontal = 2
+
+[node name="Save Names Button" type="Button" parent="Player Naming State"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 225.0
+offset_bottom = 130.0
+grow_horizontal = 2
+
+[node name="Name Cards Scroll" type="ScrollContainer" parent="Player Naming State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player Naming State/Name Cards Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Add Name Button" type="Button" parent="Player Naming State/Name Cards Scroll/VBoxContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Continue HButton" parent="Player Naming State" instance=ExtResource("6_7yxc0")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -515.0
+offset_top = -225.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Exit HButton" parent="Player Naming State" instance=ExtResource("6_7yxc0")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -225.0
+offset_right = 515.0
+offset_bottom = -40.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Color Tilt" type="ColorRect" parent="Player Naming State"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Save Names Panel" type="PanelContainer" parent="Player Naming State/Color Tilt"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -225.0
+offset_right = 390.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Player Naming State/Color Tilt/Save Names Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Named String Config Field" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer/VBoxContainer" instance=ExtResource("4_8w1mx")]
+layout_mode = 2
+
+[node name="File Override Warning Label" type="Label" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(730, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TK:FILE-OVERRIDE-WARNING"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons Group" type="Control" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Cancel Button" type="Button" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer/VBoxContainer/Buttons Group"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 345.0
+offset_bottom = 50.0
+grow_vertical = 2
+
+[node name="Confirm HButton" parent="Player Naming State/Color Tilt/Save Names Panel/MarginContainer/VBoxContainer/Buttons Group" instance=ExtResource("6_7yxc0")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -345.0
+offset_top = -50.0
+offset_right = 0.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="Load Names Panel" type="Panel" parent="Player Naming State/Color Tilt"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -590.0
+offset_right = 390.0
+offset_bottom = 590.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cancel Button" type="Button" parent="Player Naming State/Color Tilt/Load Names Panel"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 20.0
+offset_right = 760.0
+offset_bottom = 140.0
+
+[node name="Options Scroll Container" type="ScrollContainer" parent="Player Naming State/Color Tilt/Load Names Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player Naming State/Color Tilt/Load Names Panel/Options Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Role Passing State" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_mb7yp")
+
+[node name="Background" type="ColorRect" parent="Role Passing State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name Line Edit" type="LineEdit" parent="Role Passing State"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 195.0
+grow_horizontal = 2
+
+[node name="Role Show Window" type="Control" parent="Role Passing State"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -700.0
+offset_right = 450.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hidden State" type="Control" parent="Role Passing State/Role Show Window"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Role Passing State/Role Show Window/Hidden State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Question Mark" type="Label" parent="Role Passing State/Role Show Window/Hidden State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions Label" type="Label" parent="Role Passing State/Role Show Window/Hidden State"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -250.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "TK:ROLE-SHOW_HIDDEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_max_steps = 24
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Holdable Button" parent="Role Passing State/Role Show Window/Hidden State" instance=ExtResource("6_7yxc0")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x8t76")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ky6n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ryis7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vayle")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rmn80")
+
+[node name="Showing State" type="Control" parent="Role Passing State/Role Show Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Role Passing State/Role Show Window/Showing State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Role Name Label" type="Label" parent="Role Passing State/Role Show Window/Showing State"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 86
+text = "Role Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_max_steps = 48
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 86
+_current_font_size = 86
+_last_size_state = 1
+
+[node name="Role Description Label" type="Label" parent="Role Passing State/Role Show Window/Showing State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 156.0
+offset_right = -20.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 16
+_last_size_state = 1
+
+[node name="Instructions Label" type="Label" parent="Role Passing State/Role Show Window/Showing State"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "TK:ROLE-SHOW_SHOWING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_max_steps = 24
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Holdable Button" parent="Role Passing State/Role Show Window/Showing State" instance=ExtResource("6_7yxc0")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x8t76")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ky6n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ryis7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vayle")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rmn80")
+
+[node name="Game State" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_2nqv3")
+
+[node name="Top Panel" type="ColorRect" parent="Game State"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 130.0
+grow_horizontal = 2
+color = Color(0.851814, 0.63832, 0.628178, 1)
+
+[node name="Controls" type="Control" parent="Game State/Top Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wakeable Path Scroll Container" type="ScrollContainer" parent="Game State/Top Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="Path Label" type="Label" parent="Game State/Top Panel/Wakeable Path Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tabs Backgound" type="ColorRect" parent="Game State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.873298, 0.873298, 0.873298, 1)
+
+[node name="Players List Tab" type="Control" parent="Game State/Tabs Backgound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wakeable Handler Tab" parent="Game State/Tabs Backgound" instance=ExtResource("10_n0gvx")]
+layout_mode = 1
+
+[node name="Sub Wakeables Handler Tab" type="Control" parent="Game State/Tabs Backgound"]
+custom_minimum_size = Vector2(1080, 1790)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Game State/Tabs Backgound/Sub Wakeables Handler Tab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game State/Tabs Backgound/Sub Wakeables Handler Tab/ScrollContainer"]
+layout_mode = 2
+
+[node name="Tabs Panel" type="ColorRect" parent="Game State/Tabs Backgound/Sub Wakeables Handler Tab/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1080, 130)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Tabs Content" type="HBoxContainer" parent="Game State/Tabs Backgound/Sub Wakeables Handler Tab/ScrollContainer/VBoxContainer/Tabs Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Notification Window" type="ScrollContainer" parent="Game State"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ypl1u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game State/Notification Window"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Source" type="VBoxContainer" parent="Game State/Notification Window/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Player Name" type="Label" parent="Game State/Notification Window/VBoxContainer/Source"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvrvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Behaviour Name" type="Label" parent="Game State/Notification Window/VBoxContainer/Source"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvrvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Behaviour Type" type="Label" parent="Game State/Notification Window/VBoxContainer/Source"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvrvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Variable Name" type="Label" parent="Game State/Notification Window/VBoxContainer/Source"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvrvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("5_7mr4t")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 64
+_current_font_size = 64
+_last_size_state = 1
+
+[node name="Message Container" type="PanelContainer" parent="Game State/Notification Window/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game State/Notification Window/VBoxContainer/Message Container"]
+layout_mode = 2
+
+[node name="Field Container" type="PanelContainer" parent="Game State/Notification Window/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Confirm H-button" parent="Game State/Notification Window/VBoxContainer" instance=ExtResource("6_7yxc0")]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Game Journal" type="Panel" parent="Game State"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_y1a13")
+
+[node name="Logs Content" type="VBoxContainer" parent="Game State/Game Journal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Player Naming State/Load Names Button" to="Player Naming State" method="OpenNamesLoadPanel"]
+[connection signal="pressed" from="Player Naming State/Save Names Button" to="Player Naming State" method="OpenNamesSavePanel"]
+[connection signal="pressed" from="Player Naming State/Name Cards Scroll/VBoxContainer/Add Name Button" to="Player Naming State" method="AddNameCard"]
+[connection signal="Held" from="Player Naming State/Continue HButton" to="." method="ContinueToRolePassingState"]
+[connection signal="Held" from="Player Naming State/Exit HButton" to="." method="ExitPreGame"]
+[connection signal="Held" from="Role Passing State/Role Show Window/Hidden State/Holdable Button" to="Role Passing State" method="ShowRole"]
+[connection signal="Held" from="Role Passing State/Role Show Window/Showing State/Holdable Button" to="Role Passing State" method="TryEndShowingState"]

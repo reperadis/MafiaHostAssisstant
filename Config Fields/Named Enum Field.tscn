@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtvb8yw87d3c"]
+
+[ext_resource type="Theme" uid="uid://c56ucxmoo2hxi" path="res://Config Fields/Named Field Light.tres" id="1_2wmvx"]
+[ext_resource type="Script" path="res://Config Fields/NamedEnumConfigField.cs" id="1_aqxui"]
+[ext_resource type="Theme" uid="uid://m0siy14yavkj" path="res://Config Fields/Named Field Dark.tres" id="1_qed35"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_8degx"]
+[ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="3_36nkh"]
+
+[node name="Named Enum Field" type="PanelContainer" node_paths=PackedStringArray("label", "dropdown")]
+custom_minimum_size = Vector2(730, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_2wmvx")
+script = ExtResource("1_aqxui")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+dropdown = NodePath("MarginContainer/HBoxContainer/Dropdown")
+lightTheme = ExtResource("1_2wmvx")
+darkTheme = ExtResource("1_qed35")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_8degx")
+_max_steps = 25
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 45
+_current_font_size = 45
+_last_size_state = 1
+
+[node name="Dropdown" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_36nkh")]
+custom_minimum_size = Vector2(630, 100)
+layout_mode = 2
+
+[connection signal="ItemSelected" from="MarginContainer/HBoxContainer/Dropdown" to="." method="Redirect"]

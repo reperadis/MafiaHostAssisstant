@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://br377f307i0ns"]
+
+[ext_resource type="Script" path="res://Menu Part/RoleCard.cs" id="1_j6i0j"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_dbx7r"]
+[ext_resource type="Texture2D" uid="uid://be3bi5t3wvup0" path="res://Graphics/Minus.svg" id="3_mhlx2"]
+[ext_resource type="Texture2D" uid="uid://i0tkkxsbusog" path="res://Graphics/Plus.svg" id="4_eitd5"]
+
+[node name="Role Card" type="PanelContainer" node_paths=PackedStringArray("roleNameLabel")]
+custom_minimum_size = Vector2(950, 400)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_j6i0j")
+roleNameLabel = NodePath("MarginContainer/VBoxContainer/Name and Button group/Role Name Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Name and Button group" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Role Name Label" type="Label" parent="MarginContainer/VBoxContainer/Name and Button group"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 68
+text = "Role Name Goes There"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_dbx7r")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 68
+_current_font_size = 68
+_last_size_state = 1
+
+[node name="Role Full Info Button" type="Button" parent="MarginContainer/VBoxContainer/Name and Button group"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_bottom = 75.0
+grow_horizontal = 0
+
+[node name="Add Count Remove group" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Remove Button" type="Button" parent="MarginContainer/VBoxContainer/Add Count Remove group"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_vertical = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Add Count Remove group/Remove Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mhlx2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count Label" type="Label" parent="MarginContainer/VBoxContainer/Add Count Remove group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -100.0
+offset_right = 175.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
+theme_override_font_sizes/font_size = 128
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_dbx7r")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 128
+_current_font_size = 128
+_last_size_state = 1
+
+[node name="Add Button" type="Button" parent="MarginContainer/VBoxContainer/Add Count Remove group"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = -50.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Add Count Remove group/Add Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_eitd5")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Add Count Remove group/Remove Button" to="." method="RemoveRoleFromList"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Add Count Remove group/Add Button" to="." method="AddRoleToList"]

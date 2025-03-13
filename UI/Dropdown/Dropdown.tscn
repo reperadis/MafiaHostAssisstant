@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwuikg8wm7ifp"]
+
+[ext_resource type="Script" path="res://UI/Dropdown/Dropdown.cs" id="1_8v6uq"]
+[ext_resource type="Theme" uid="uid://bn5jwweycmbph" path="res://UI/Dropdown/Dropdown Dark.tres" id="1_gluaq"]
+[ext_resource type="PackedScene" uid="uid://bno4518wkljbj" path="res://UI/Dropdown/Dropdown Element.tscn" id="3_b36e0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbttt"]
+
+[node name="Dropdown" type="MarginContainer" node_paths=PackedStringArray("elementsPanel", "elementsContent", "selectedElementLabel", "selectedElementIcon")]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_gluaq")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_8v6uq")
+elementScene = ExtResource("3_b36e0")
+elementsPanel = NodePath("Elements Panel")
+elementsContent = NodePath("Elements Panel/MarginContainer/ScrollContainer/MarginContainer/Content")
+selectedElementLabel = NodePath("MarginContainer/VBoxContainer/Selected Item Label")
+selectedElementIcon = NodePath("MarginContainer/VBoxContainer/Selected Item Icon")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Selected Item Icon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Selected Item Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Arrow Icon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Elements Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Elements Panel"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Elements Panel/MarginContainer"]
+custom_minimum_size = Vector2(480, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vbttt")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Elements Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="Elements Panel/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[connection signal="pressed" from="Button" to="." method="OnDropdownPresed"]

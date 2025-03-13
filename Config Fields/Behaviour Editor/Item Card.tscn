@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://vj3igkelhfro"]
+
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEItemCard.cs" id="1_kgfy2"]
+
+[node name="Item" type="PanelContainer" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(710, 120)
+offset_right = 700.0
+offset_bottom = 120.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"ItemPanel"
+script = ExtResource("1_kgfy2")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+localize_numeral_system = false
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="Move"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7avlvmkvt61o"]
+
+[ext_resource type="Script" path="res://Config Fields/Item.cs" id="1_vlma7"]
+
+[node name="Item" type="PanelContainer" node_paths=PackedStringArray("icon", "label")]
+theme_type_variation = &"ItemPanel"
+script = ExtResource("1_vlma7")
+icon = NodePath("MarginContainer/HBoxContainer/TextureRect")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelOne"
+theme_override_font_sizes/font_size = 45
+text = "aaaaaaa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

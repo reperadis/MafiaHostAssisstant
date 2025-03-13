@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://4iwx508qypt0"]
+
+[ext_resource type="Script" path="res://Game part/Logs/NL_PlayerNoVictim.cs" id="1_hs42x"]
+[ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="2_e8161"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="3_bwr7o"]
+
+[node name="Player No Victims Night Log" type="Panel" node_paths=PackedStringArray("actionLabel", "acterLabel")]
+custom_minimum_size = Vector2(900, 175)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_hs42x")
+actionLabel = NodePath("Action Label")
+acterLabel = NodePath("Player HButton/LabelAutoSizer")
+
+[node name="Toggle Player Name Or Role Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 42.5
+offset_top = -45.0
+offset_right = 132.5
+offset_bottom = 45.0
+grow_vertical = 2
+
+[node name="Player HButton" parent="." instance=ExtResource("2_e8161")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 163.0
+offset_top = -62.5
+offset_right = 473.0
+offset_bottom = 62.5
+grow_horizontal = 1
+
+[node name="Action Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -62.5
+offset_right = -25.0
+offset_bottom = 62.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("3_bwr7o")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 16
+_last_size_state = 1
+
+[connection signal="pressed" from="Toggle Player Name Or Role Button" to="." method="ToggleActerInfo"]
+[connection signal="Held" from="Player HButton" to="." method="HighlightActer"]
+
+[editable path="Player HButton"]

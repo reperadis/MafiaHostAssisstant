@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvw1u8ruhu45c"]
+
+[ext_resource type="Script" path="res://Behavior Editor Part/ErrorMessageGroup.cs" id="1_k7tlb"]
+[ext_resource type="PackedScene" uid="uid://cfbo2vcf6fdec" path="res://Behavior Editor Part/Error Message.tscn" id="2_u2b7s"]
+
+[node name="Error Message Group" type="PanelContainer" node_paths=PackedStringArray("operationNameLabel", "content")]
+offset_right = 940.0
+offset_bottom = 150.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_k7tlb")
+operationNameLabel = NodePath("MarginContainer/VBoxContainer/Header HBoxContainer/Operation Name")
+content = NodePath("MarginContainer/VBoxContainer")
+errorMessageScene = ExtResource("2_u2b7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Header HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Docs Margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Go To Docs Button" type="Button" parent="MarginContainer/VBoxContainer/Header HBoxContainer/Docs Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Operation Name" type="Label" parent="MarginContainer/VBoxContainer/Header HBoxContainer"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "Erroring Operation Name"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Operation Margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/Header HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Go To Operation Button" type="Button" parent="MarginContainer/VBoxContainer/Header HBoxContainer/Operation Margin"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 0

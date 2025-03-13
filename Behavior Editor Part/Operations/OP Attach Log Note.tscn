@@ -1,0 +1,208 @@
+[gd_scene load_steps=10 format=3 uid="uid://clpj5sw1st5g7"]
+
+[ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_c2ll4"]
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_AttachLogNote.cs" id="2_4ol71"]
+[ext_resource type="Script" path="res://UI/DynamicStringDisplayer.cs" id="3_o6klo"]
+[ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_xd14g"]
+[ext_resource type="Script" path="res://HoldableButton.cs" id="4_eqcu2"]
+[ext_resource type="PackedScene" uid="uid://dl1qe4rxbteq1" path="res://UI/Linked HButton.tscn" id="4_rg6sv"]
+[ext_resource type="Texture2D" uid="uid://xyvmduw7mnqm" path="res://Graphics/Config Light.png" id="5_0kt0a"]
+[ext_resource type="Script" path="res://ThemedTextureRect.cs" id="6_5fea4"]
+[ext_resource type="Texture2D" uid="uid://0g4356rhh3yw" path="res://Graphics/Config Dark.png" id="7_mnq2u"]
+
+[node name="Attach Log Note Operation" type="HBoxContainer" node_paths=PackedStringArray("previewContainer", "preview", "togglePreviewButtonTR", "identationControl", "deselectionButton")]
+custom_minimum_size = Vector2(0, 275)
+offset_right = 900.0
+offset_bottom = 275.0
+theme = ExtResource("1_c2ll4")
+script = ExtResource("2_4ol71")
+previewContainer = NodePath("Content/MarginContainer/VBoxContainer/Message Preview PanelContainer")
+preview = NodePath("Content/MarginContainer/VBoxContainer/Message Preview PanelContainer/Preview Text")
+togglePreviewButtonTR = NodePath("Content/MarginContainer/VBoxContainer/Button Shift/Toggle Message Preview Button/TextureRect")
+darkTheme = ExtResource("3_xd14g")
+lightTheme = ExtResource("1_c2ll4")
+identationControl = NodePath("Identation")
+deselectionButton = NodePath("Content/Deselect Button")
+
+[node name="Identation" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 275)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Operation Tools" type="Control" parent="Identation"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Move Up Button" type="Button" parent="Identation/Operation Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -92.5
+offset_right = -10.0
+offset_bottom = -12.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"OperationToolButton"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move Down Button" type="Button" parent="Identation/Operation Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 12.5
+offset_right = -10.0
+offset_bottom = 92.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"OperationToolButton"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Content" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(800, 275)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label HBoxContainer" type="HBoxContainer" parent="Content/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Margin Shifter" type="Control" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Label Container" type="MarginContainer" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer"]
+layout_mode = 2
+
+[node name="Operation Label" type="Label" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+text = "TK:OP_ATTACH-LOG-NOTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Select HButton" type="Button" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container" node_paths=PackedStringArray("progressBar")]
+clip_children = 1
+layout_mode = 2
+script = ExtResource("4_eqcu2")
+progressBar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Open Config Button" type="Button" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Content/MarginContainer/VBoxContainer/Label HBoxContainer/MarginContainer/Open Config Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_0kt0a")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_5fea4")
+lightTexture = ExtResource("5_0kt0a")
+darkTexture = ExtResource("7_mnq2u")
+
+[node name="Button Shift" type="Control" parent="Content/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Toggle Message Preview Button" type="Button" parent="Content/MarginContainer/VBoxContainer/Button Shift"]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 100.0
+offset_bottom = 40.0
+theme_type_variation = &"ToggleMessagePreviewButton"
+
+[node name="TextureRect" type="TextureRect" parent="Content/MarginContainer/VBoxContainer/Button Shift/Toggle Message Preview Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message Preview PanelContainer" type="PanelContainer" parent="Content/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"MessagePanel"
+
+[node name="Preview Text" type="Control" parent="Content/MarginContainer/VBoxContainer/Message Preview PanelContainer"]
+layout_mode = 2
+script = ExtResource("3_o6klo")
+linkedHButtonScene = ExtResource("4_rg6sv")
+FontSize = 35
+
+[node name="Deselect Button" type="Button" parent="Content"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"DeselectButton"
+
+[connection signal="pressed" from="Identation/Operation Tools/Move Up Button" to="." method="MoveUp"]
+[connection signal="pressed" from="Identation/Operation Tools/Move Down Button" to="." method="MoveDown"]
+[connection signal="Held" from="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" to="." method="Select"]
+[connection signal="button_down" from="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" to="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" method="PointerDown"]
+[connection signal="button_up" from="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" to="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" method="PointerUp"]
+[connection signal="visibility_changed" from="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" to="Content/MarginContainer/VBoxContainer/Label HBoxContainer/Label Container/Select HButton" method="OnVisibilityChanged"]
+[connection signal="pressed" from="Content/MarginContainer/VBoxContainer/Label HBoxContainer/MarginContainer/Open Config Button" to="." method="OpenConfigWindow"]
+[connection signal="pressed" from="Content/MarginContainer/VBoxContainer/Button Shift/Toggle Message Preview Button" to="." method="TogglePreview"]
+[connection signal="pressed" from="Content/Deselect Button" to="." method="Deselect"]

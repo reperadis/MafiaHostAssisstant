@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdxc2w5gcsf2"]
+
+[ext_resource type="Script" path="res://Config Fields/StringConfigField.cs" id="1_8n5m1"]
+[ext_resource type="Theme" uid="uid://hdy0g023k0s8" path="res://Config Fields/String Field Dark.tres" id="1_eyx47"]
+
+[node name="String Config Field" type="TextEdit"]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(690, 180)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -90.0
+offset_right = 345.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+localize_numeral_system = false
+theme = ExtResource("1_eyx47")
+theme_override_font_sizes/font_size = 40
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+caret_multiple = false
+script = ExtResource("1_8n5m1")

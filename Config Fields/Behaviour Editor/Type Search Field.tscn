@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfjj6dmexs45s"]
+
+[ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="1_kwfv5"]
+[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/TypeSearchField.cs" id="2_moph7"]
+
+[node name="Dropdown" instance=ExtResource("1_kwfv5")]
+script = ExtResource("2_moph7")

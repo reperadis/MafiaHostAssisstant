@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ub4gwkpyj2fp"]
+
+[ext_resource type="PackedScene" uid="uid://djlm7hnxu5isw" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Variable.tscn" id="1_d83hy"]
+[ext_resource type="Script" path="res://Behavior Editor Part/Operations/Variable Creators/OP_CreatePersistentVariable.cs" id="2_3piig"]
+
+[node name="Allocate Variable Operation" instance=ExtResource("1_d83hy")]
+script = ExtResource("2_3piig")
+
+[node name="Operation Label" parent="Content/MarginContainer/VBoxContainer/Label Container" index="0"]
+text = "TK:OP_CREATE-PERSISTENT-VARIABLE"
