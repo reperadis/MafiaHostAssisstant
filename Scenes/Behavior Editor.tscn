@@ -861,7 +861,33 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
 
+[node name="Close Button" type="Button" parent="Behavior Configuration CT"]
+custom_minimum_size = Vector2(110, 110)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 130.0
+size_flags_vertical = 0
+theme_type_variation = &"IconedButton"
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Behavior Configuration CT/Close Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Operation Config Window CT" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1043,6 +1069,7 @@ autowrap_mode = 3
 [connection signal="Held" from="Spec Behavior Window/VBoxContainer/Selection Manipulation Buttons/Delete Selected HButton" to="Entry Point Scroll Container/MarginContainer/VBoxContainer/Spec Entry Point" method="DeleteSelectedOperations"]
 [connection signal="pressed" from="Spec Behavior Window/VBoxContainer/Operations Scroll Container/MarginContainer/HBoxContainer/Done Button" to="Spec Behavior Window" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field/Add Tag Panel/MarginContainer/HBoxContainer/Button" to="Behavior Configuration CT/ScrollContainer/MarginContainer/VBoxContainer/Tags Field" method="AddNewItem"]
+[connection signal="pressed" from="Behavior Configuration CT/Close Button" to="Behavior Configuration CT" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Operation Config Window CT/Close Window Button" to="." method="CloseConfigWindow"]
 [connection signal="Held" from="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Proceed Anyways HButton" to="." method="OnExitAnywaysButton"]
 [connection signal="pressed" from="Behavior Save Error CT/Panel/MarginContainer/VboxContainer/Buttons/Cancel Button" to="Behavior Save Error CT" method="set_visible" binds= [false]]
