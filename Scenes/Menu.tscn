@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmfm7d4504c6i"]
 
 [ext_resource type="Theme" uid="uid://bi38y1ubqlq8t" path="res://Menu Part/Graphics/Menu Light.tres" id="1_nggyf"]
-[ext_resource type="Script" path="res://Menu Part/MenuManager.cs" id="1_w0hpw"]
+[ext_resource type="Script" uid="uid://cqflwn4aidqyw" path="res://Menu Part/MenuManager.cs" id="1_w0hpw"]
 [ext_resource type="PackedScene" uid="uid://br377f307i0ns" path="res://Menu Part/Role Card.tscn" id="2_bnrsy"]
 [ext_resource type="Texture2D" uid="uid://i0tkkxsbusog" path="res://Graphics/Plus.svg" id="3_mi0ba"]
 [ext_resource type="Theme" uid="uid://bkilnkbf8xos3" path="res://Menu Part/Graphics/Menu Dark.tres" id="4_shw67"]
 [ext_resource type="PackedScene" uid="uid://c40jnhokll2hk" path="res://Menu Part/Behavior Card.tscn" id="5_w6514"]
-[ext_resource type="Script" path="res://Settings And Docs Part/OpenSettingsButton.cs" id="7_vdb66"]
+[ext_resource type="Script" uid="uid://bo3x5cmuexfc6" path="res://Settings And Docs Part/OpenSettingsButton.cs" id="7_vdb66"]
 [ext_resource type="Texture2D" uid="uid://dimwmoyepwh7b" path="res://Graphics/Settings Dark.png" id="8_8qn0v"]
 
 [node name="Menu" type="Control" node_paths=PackedStringArray("mainMenu", "deck", "behaviorsList", "behaviorsContent", "createMenu", "createMenuCT", "firstDeckPage", "secondDeckPage", "cardsContent", "createNewRoleButton")]

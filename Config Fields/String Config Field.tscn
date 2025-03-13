@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxdxc2w5gcsf2"]
 
-[ext_resource type="Script" path="res://Config Fields/StringConfigField.cs" id="1_8n5m1"]
+[ext_resource type="Script" uid="uid://bqsycj05a44y3" path="res://Config Fields/StringConfigField.cs" id="1_8n5m1"]
 [ext_resource type="Theme" uid="uid://hdy0g023k0s8" path="res://Config Fields/String Field Dark.tres" id="1_eyx47"]
 
 [node name="String Config Field" type="TextEdit"]

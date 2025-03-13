@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_puk3j"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="1_qaaw7"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_AskValue.cs" id="2_v5cgf"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_a01gv"]
-[ext_resource type="Script" path="res://UI/DynamicStringDisplayer.cs" id="4_cmkvp"]
+[ext_resource type="Script" uid="uid://btht6605b4ov7" path="res://Behavior Editor Part/Operations/OP_AskValue.cs" id="2_v5cgf"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_a01gv"]
+[ext_resource type="Script" uid="uid://bnobaygj7cygw" path="res://UI/DynamicStringDisplayer.cs" id="4_cmkvp"]
 [ext_resource type="PackedScene" uid="uid://dl1qe4rxbteq1" path="res://UI/Linked HButton.tscn" id="5_yagbn"]
 
 [node name="Ask Value Operation" type="HBoxContainer" node_paths=PackedStringArray("varNameLabel", "varTypeTextureRect", "previewContainer", "preview", "togglePreviewButtonTR", "identationControl", "deselectionButton")]

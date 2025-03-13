@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvw1u8ruhu45c"]
 
-[ext_resource type="Script" path="res://Behavior Editor Part/ErrorMessageGroup.cs" id="1_k7tlb"]
+[ext_resource type="Script" uid="uid://dinqpuwwt17j3" path="res://Behavior Editor Part/ErrorMessageGroup.cs" id="1_k7tlb"]
 [ext_resource type="PackedScene" uid="uid://cfbo2vcf6fdec" path="res://Behavior Editor Part/Error Message.tscn" id="2_u2b7s"]
 
 [node name="Error Message Group" type="PanelContainer" node_paths=PackedStringArray("operationNameLabel", "content")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl1qe4rxbteq1"]
 
 [ext_resource type="Theme" uid="uid://btntq1janxwaf" path="res://Linked HButton Light.tres" id="1_eu5h1"]
-[ext_resource type="Script" path="res://UI/LinkedHButton.cs" id="2_psned"]
+[ext_resource type="Script" uid="uid://dm62paha0g3hy" path="res://UI/LinkedHButton.cs" id="2_psned"]
 
 [node name="Linked HButton" type="Button" node_paths=PackedStringArray("progressBar")]
 clip_children = 1

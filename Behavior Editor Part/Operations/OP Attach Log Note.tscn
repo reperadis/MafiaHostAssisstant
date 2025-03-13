@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://clpj5sw1st5g7"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_c2ll4"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_AttachLogNote.cs" id="2_4ol71"]
-[ext_resource type="Script" path="res://UI/DynamicStringDisplayer.cs" id="3_o6klo"]
+[ext_resource type="Script" uid="uid://fph5q5f0qjlj" path="res://Behavior Editor Part/Operations/OP_AttachLogNote.cs" id="2_4ol71"]
+[ext_resource type="Script" uid="uid://bnobaygj7cygw" path="res://UI/DynamicStringDisplayer.cs" id="3_o6klo"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_xd14g"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_eqcu2"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_eqcu2"]
 [ext_resource type="PackedScene" uid="uid://dl1qe4rxbteq1" path="res://UI/Linked HButton.tscn" id="4_rg6sv"]
 [ext_resource type="Texture2D" uid="uid://xyvmduw7mnqm" path="res://Graphics/Config Light.png" id="5_0kt0a"]
-[ext_resource type="Script" path="res://ThemedTextureRect.cs" id="6_5fea4"]
+[ext_resource type="Script" uid="uid://b8hlgkj4u08th" path="res://ThemedTextureRect.cs" id="6_5fea4"]
 [ext_resource type="Texture2D" uid="uid://0g4356rhh3yw" path="res://Graphics/Config Dark.png" id="7_mnq2u"]
 
 [node name="Attach Log Note Operation" type="HBoxContainer" node_paths=PackedStringArray("previewContainer", "preview", "togglePreviewButtonTR", "identationControl", "deselectionButton")]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvemf2msk0wof"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_moulv"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_ControlFlow.cs" id="2_sbuxx"]
+[ext_resource type="Script" uid="uid://bdddsnk2vn57m" path="res://Behavior Editor Part/Operations/OP_ControlFlow.cs" id="2_sbuxx"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_0n2dt"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_2md7g"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_2md7g"]
 [ext_resource type="Texture2D" uid="uid://xyvmduw7mnqm" path="res://Graphics/Config Light.png" id="5_84ed5"]
-[ext_resource type="Script" path="res://ThemedTextureRect.cs" id="6_euiia"]
+[ext_resource type="Script" uid="uid://b8hlgkj4u08th" path="res://ThemedTextureRect.cs" id="6_euiia"]
 [ext_resource type="Texture2D" uid="uid://0g4356rhh3yw" path="res://Graphics/Config Dark.png" id="7_6jdi0"]
 
 [node name="Control Flow Operation" type="HBoxContainer" node_paths=PackedStringArray("label", "returnGroup", "returnedVarNameLabel", "returnedVarTypeTextureRect", "depthGroup", "depthLabel", "identationControl", "deselectionButton")]

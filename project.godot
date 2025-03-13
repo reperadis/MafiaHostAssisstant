@@ -17,7 +17,7 @@ config/name_localized={
 }
 run/main_scene="res://Scenes/Bootstrap.tscn"
 config/quit_on_go_back=false
-config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]

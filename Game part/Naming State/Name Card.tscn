@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b42j0b0fpswjq"]
 
-[ext_resource type="Script" path="res://Game part/Naming State/PlayerNamingCard.cs" id="1_1yp1c"]
+[ext_resource type="Script" uid="uid://bhcak8no6tiik" path="res://Game part/Naming State/PlayerNamingCard.cs" id="1_1yp1c"]
 
 [node name="Name Card" type="Panel" node_paths=PackedStringArray("nameLineEdit")]
 custom_minimum_size = Vector2(850, 200)

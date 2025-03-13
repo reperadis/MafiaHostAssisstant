@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7avlvmkvt61o"]
 
-[ext_resource type="Script" path="res://Config Fields/Item.cs" id="1_vlma7"]
+[ext_resource type="Script" uid="uid://d0b0vvc6ie1f8" path="res://Config Fields/Item.cs" id="1_vlma7"]
 
 [node name="Item" type="PanelContainer" node_paths=PackedStringArray("icon", "label")]
 theme_type_variation = &"ItemPanel"

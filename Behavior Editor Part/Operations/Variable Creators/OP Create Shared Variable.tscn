@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tf4831q001xc"]
 
 [ext_resource type="PackedScene" uid="uid://djlm7hnxu5isw" path="res://Behavior Editor Part/Operations/Variable Creators/OP Create Variable.tscn" id="1_hffkh"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/Variable Creators/OP_CreateSharedVariable.cs" id="2_57e4l"]
+[ext_resource type="Script" uid="uid://ikp3jbsd5ckh" path="res://Behavior Editor Part/Operations/Variable Creators/OP_CreateSharedVariable.cs" id="2_57e4l"]
 
 [node name="Create Shared Variable Operation" instance=ExtResource("1_hffkh")]
 script = ExtResource("2_57e4l")

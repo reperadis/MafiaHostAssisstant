@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfe8dg1k5loh1"]
 
-[ext_resource type="Script" path="res://Config Fields/Game/NamedPlayerSelectionField.cs" id="1_pwu85"]
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_o3gd7"]
+[ext_resource type="Script" uid="uid://d2kulsecgyxa" path="res://Config Fields/Game/NamedPlayerSelectionField.cs" id="1_pwu85"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_o3gd7"]
 
 [node name="Player Config Field" type="PanelContainer"]
 custom_minimum_size = Vector2(730, 0)

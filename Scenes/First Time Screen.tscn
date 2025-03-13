@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://citwer1xaklll"]
 
-[ext_resource type="Script" path="res://First Time Screen/FirstTimeScreenManager.cs" id="1_5hh5i"]
+[ext_resource type="Script" uid="uid://brxqel0l1hpcf" path="res://First Time Screen/FirstTimeScreenManager.cs" id="1_5hh5i"]
 [ext_resource type="Theme" uid="uid://cd532ihostnye" path="res://First Time Screen/First Time Screen Light.tres" id="1_jcvxp"]
 [ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="2_bl4on"]
-[ext_resource type="Script" path="res://First Time Screen/FirstTimeNote.cs" id="2_c0tnn"]
+[ext_resource type="Script" uid="uid://dspkdie6ial4r" path="res://First Time Screen/FirstTimeNote.cs" id="2_c0tnn"]
 [ext_resource type="Theme" uid="uid://c5v6f6whri1v0" path="res://First Time Screen/First Time Screen Dark.tres" id="3_h777o"]
 
 [node name="FirstTimeScreen" type="Control" node_paths=PackedStringArray("languageSelectionDropdown")]

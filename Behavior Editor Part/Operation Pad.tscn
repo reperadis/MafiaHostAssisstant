@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1et6gkkcf55m"]
 
-[ext_resource type="Script" path="res://Behavior Editor Part/OperationPad.cs" id="1_rou3y"]
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_wx44b"]
+[ext_resource type="Script" uid="uid://cnu87goxwc6an" path="res://Behavior Editor Part/OperationPad.cs" id="1_rou3y"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_wx44b"]
 
 [node name="Operation Pad" type="Button"]
 custom_minimum_size = Vector2(400, 150)

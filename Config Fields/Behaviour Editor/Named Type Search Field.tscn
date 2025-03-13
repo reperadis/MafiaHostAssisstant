@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct25g2o8wigfg"]
 
-[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/NamedTypeSearchField.cs" id="1_f8fle"]
+[ext_resource type="Script" uid="uid://dphix7lqylsch" path="res://Config Fields/Behaviour Editor/NamedTypeSearchField.cs" id="1_f8fle"]
 [ext_resource type="Theme" uid="uid://c56ucxmoo2hxi" path="res://Config Fields/Named Field Light.tres" id="1_yiyke"]
 [ext_resource type="Theme" uid="uid://m0siy14yavkj" path="res://Config Fields/Named Field Dark.tres" id="3_a06rs"]
 [ext_resource type="PackedScene" uid="uid://cfjj6dmexs45s" path="res://Config Fields/Behaviour Editor/Type Search Field.tscn" id="3_g5lfb"]

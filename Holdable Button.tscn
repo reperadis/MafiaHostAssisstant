@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://rgyc8mewlqjp"]
 
-[ext_resource type="Script" path="res://HoldableButton.cs" id="1_0d0ao"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="1_0d0ao"]
 [ext_resource type="Theme" uid="uid://n0gg3c0daxmm" path="res://Holdable Button Light.tres" id="1_qx2x8"]
 
 [node name="Holdable Button" type="Button" node_paths=PackedStringArray("progressBar")]

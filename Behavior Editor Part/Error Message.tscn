@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfbo2vcf6fdec"]
 
-[ext_resource type="Script" path="res://UI/ColorEmbedLabel.cs" id="1_b3775"]
+[ext_resource type="Script" uid="uid://b7oatlji8i0el" path="res://UI/ColorEmbedLabel.cs" id="1_b3775"]
 [ext_resource type="FontFile" uid="uid://cufsxrf5dmxcx" path="res://Misc/Vollda-Bold.otf" id="2_tsjk7"]
 
 [node name="Error Message" type="Control"]

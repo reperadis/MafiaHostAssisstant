@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://br377f307i0ns"]
 
-[ext_resource type="Script" path="res://Menu Part/RoleCard.cs" id="1_j6i0j"]
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_dbx7r"]
+[ext_resource type="Script" uid="uid://bhvqcj4coudvg" path="res://Menu Part/RoleCard.cs" id="1_j6i0j"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_dbx7r"]
 [ext_resource type="Texture2D" uid="uid://be3bi5t3wvup0" path="res://Graphics/Minus.svg" id="3_mhlx2"]
 [ext_resource type="Texture2D" uid="uid://i0tkkxsbusog" path="res://Graphics/Plus.svg" id="4_eitd5"]
 

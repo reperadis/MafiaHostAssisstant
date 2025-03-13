@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btm8un22xmeku"]
 
 [ext_resource type="Theme" uid="uid://cnwponj6twkko" path="res://Config Fields/Bool Field Light.tres" id="1_pi0ff"]
-[ext_resource type="Script" path="res://Config Fields/BoolConfigField.cs" id="1_qhsjw"]
+[ext_resource type="Script" uid="uid://v13peluf2m84" path="res://Config Fields/BoolConfigField.cs" id="1_qhsjw"]
 
 [node name="Button" type="Button"]
 anchors_preset = 8

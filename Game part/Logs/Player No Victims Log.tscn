@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://4iwx508qypt0"]
 
-[ext_resource type="Script" path="res://Game part/Logs/NL_PlayerNoVictim.cs" id="1_hs42x"]
+[ext_resource type="Script" uid="uid://chcslajmvqjmx" path="res://Game part/Logs/NL_PlayerNoVictim.cs" id="1_hs42x"]
 [ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="2_e8161"]
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="3_bwr7o"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="3_bwr7o"]
 
 [node name="Player No Victims Night Log" type="Panel" node_paths=PackedStringArray("actionLabel", "acterLabel")]
 custom_minimum_size = Vector2(900, 175)

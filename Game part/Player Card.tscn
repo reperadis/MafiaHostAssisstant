@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcb8cgdcxyija"]
 
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="1_wib56"]
-[ext_resource type="Script" path="res://Game part/Player.cs" id="1_xqd47"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="1_wib56"]
+[ext_resource type="Script" uid="uid://be2pt2s7ifwys" path="res://Game part/Player.cs" id="1_xqd47"]
 [ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="2_xm82w"]
 
 [node name="Player Card" type="VBoxContainer"]

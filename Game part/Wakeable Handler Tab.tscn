@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cja4d6j8jtoul"]
 
-[ext_resource type="Script" path="res://Game part/WakeableHandlerWindow.cs" id="1_dowyn"]
+[ext_resource type="Script" uid="uid://mey32jc2lvuh" path="res://Game part/WakeableHandlerWindow.cs" id="1_dowyn"]
 [ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="1_u5p4c"]
-[ext_resource type="Script" path="res://Config Fields/Game/NamedPlayerSelectionField.cs" id="2_t3sfk"]
+[ext_resource type="Script" uid="uid://d2kulsecgyxa" path="res://Config Fields/Game/NamedPlayerSelectionField.cs" id="2_t3sfk"]
 
 [node name="Wakeable Handler Tab" type="Control"]
 custom_minimum_size = Vector2(1080, 1790)

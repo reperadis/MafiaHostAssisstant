@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bno4518wkljbj"]
 
 [ext_resource type="Theme" uid="uid://1y684qdhrsxe" path="res://UI/Dropdown/Dropdown Element Light.tres" id="1_2ciqt"]
-[ext_resource type="Script" path="res://UI/Dropdown/DropdownElement.cs" id="2_u2bbu"]
+[ext_resource type="Script" uid="uid://w6g34x8ov7ty" path="res://UI/Dropdown/DropdownElement.cs" id="2_u2bbu"]
 
 [node name="Element" type="MarginContainer" node_paths=PackedStringArray("label", "iconRect")]
 theme = ExtResource("1_2ciqt")

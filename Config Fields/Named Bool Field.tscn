@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ck6h7u1fawjtf"]
 
-[ext_resource type="Script" path="res://Config Fields/NamedBoolConfigField.cs" id="1_00t7i"]
+[ext_resource type="Script" uid="uid://dnoqiuva5gu3g" path="res://Config Fields/NamedBoolConfigField.cs" id="1_00t7i"]
 [ext_resource type="Theme" uid="uid://c56ucxmoo2hxi" path="res://Config Fields/Named Field Light.tres" id="1_yxygn"]
 [ext_resource type="Theme" uid="uid://m0siy14yavkj" path="res://Config Fields/Named Field Dark.tres" id="3_b7b52"]
 [ext_resource type="PackedScene" uid="uid://btm8un22xmeku" path="res://Config Fields/Bool Config Field.tscn" id="3_jkutt"]

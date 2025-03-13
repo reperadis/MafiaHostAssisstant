@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://obk6fti8dnv1"]
 
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP Branch/OP_Branch_Branch.cs" id="1_5ckx1"]
-[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="2_117un"]
+[ext_resource type="Script" uid="uid://buparhbp0n4k3" path="res://Behavior Editor Part/Operations/OP Branch/OP_Branch_Branch.cs" id="1_5ckx1"]
+[ext_resource type="Script" uid="uid://bqsj6cepgo84b" path="res://Behavior Editor Part/OperationScope.cs" id="2_117un"]
 
 [node name="Branch" type="VBoxContainer" node_paths=PackedStringArray("branchLabelLabel", "behaviorScope")]
 offset_right = 800.0

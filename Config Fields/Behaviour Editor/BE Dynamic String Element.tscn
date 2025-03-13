@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwyhvtb07vpbc"]
 
-[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEDynamicStringElement.cs" id="1_mswhi"]
+[ext_resource type="Script" uid="uid://cjjpm1lvfbde0" path="res://Config Fields/Behaviour Editor/BEDynamicStringElement.cs" id="1_mswhi"]
 [ext_resource type="PackedScene" uid="uid://dxdxc2w5gcsf2" path="res://Config Fields/String Config Field.tscn" id="2_r0qqi"]
 [ext_resource type="PackedScene" uid="uid://cfjj6dmexs45s" path="res://Config Fields/Behaviour Editor/Type Search Field.tscn" id="3_ryf6x"]
 

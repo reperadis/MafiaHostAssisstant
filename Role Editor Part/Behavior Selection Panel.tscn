@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://lti3vmrjhjde"]
 
-[ext_resource type="Script" path="res://BehaviorSelectionPanel.cs" id="1_l02qo"]
+[ext_resource type="Script" uid="uid://c224nqtolyqy4" path="res://BehaviorSelectionPanel.cs" id="1_l02qo"]
 [ext_resource type="PackedScene" uid="uid://c7avlvmkvt61o" path="res://Config Fields/Item.tscn" id="2_mhtlk"]
 [ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="3_ea11f"]
 

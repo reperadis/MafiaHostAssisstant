@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcwjetnids2ht"]
 
-[ext_resource type="Script" path="res://Config Fields/IntConfigField.cs" id="1_50agq"]
+[ext_resource type="Script" uid="uid://dr3d7vpl1r3vo" path="res://Config Fields/IntConfigField.cs" id="1_50agq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifo3w"]
 bg_color = Color(0.75, 0.75, 0.75, 1)

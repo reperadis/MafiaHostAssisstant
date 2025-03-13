@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b72qf5d8hnp2g"]
 
 [ext_resource type="PackedScene" uid="uid://cua3huj5xk45l" path="res://Behavior Editor Part/Operations/OP Logical Operation.tscn" id="1_avd0j"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_CompareIntegers.cs" id="2_jffuq"]
+[ext_resource type="Script" uid="uid://0jccxujj8fb0" path="res://Behavior Editor Part/Operations/OP_CompareIntegers.cs" id="2_jffuq"]
 
 [node name="Compare Integers Operation" node_paths=PackedStringArray("operationLabel") instance=ExtResource("1_avd0j")]
 anchors_preset = 0

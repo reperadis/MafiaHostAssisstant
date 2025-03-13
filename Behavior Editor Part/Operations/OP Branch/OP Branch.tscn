@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1gr7hmli4n86"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_qgt05"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP Branch/OP_Branch.cs" id="2_stoa4"]
+[ext_resource type="Script" uid="uid://icrowc53jgri" path="res://Behavior Editor Part/Operations/OP Branch/OP_Branch.cs" id="2_stoa4"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="4_8v0bh"]
-[ext_resource type="Script" path="res://UI/DynamicStringDisplayer.cs" id="5_mr5k0"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="5_x5wvv"]
+[ext_resource type="Script" uid="uid://bnobaygj7cygw" path="res://UI/DynamicStringDisplayer.cs" id="5_mr5k0"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="5_x5wvv"]
 [ext_resource type="PackedScene" uid="uid://dl1qe4rxbteq1" path="res://UI/Linked HButton.tscn" id="6_5grdk"]
 [ext_resource type="PackedScene" uid="uid://obk6fti8dnv1" path="res://Behavior Editor Part/Operations/OP Branch/Branch Branch.tscn" id="6_8syu8"]
 

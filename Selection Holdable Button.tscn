@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://eypwqurtphg2"]
 
-[ext_resource type="Script" path="res://SelectionHButton.cs" id="1_cjsbe"]
+[ext_resource type="Script" uid="uid://beal0j0xwjaqi" path="res://SelectionHButton.cs" id="1_cjsbe"]
 [ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="1_s1u77"]
 
 [node name="Selection HButton" type="HBoxContainer"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs7nicmdjwwv8"]
 
 [ext_resource type="PackedScene" uid="uid://cy0e0lx7lhhac" path="res://Scenes/Settings And Docs.tscn" id="1_06r1q"]
-[ext_resource type="Script" path="res://BootstrapManager.cs" id="1_r03nj"]
-[ext_resource type="Script" path="res://Cache.cs" id="3_7qw4d"]
+[ext_resource type="Script" uid="uid://dn3axie7w60ol" path="res://BootstrapManager.cs" id="1_r03nj"]
+[ext_resource type="Script" uid="uid://bia6mwe7exx8i" path="res://Cache.cs" id="3_7qw4d"]
 
 [node name="Bootstrap" type="Control"]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c40jnhokll2hk"]
 
 [ext_resource type="Theme" uid="uid://cm33svj33x7t8" path="res://Menu Part/Behavior Item Light.tres" id="1_yfvw1"]
-[ext_resource type="Script" path="res://Menu Part/BehaviorCard.cs" id="2_65url"]
+[ext_resource type="Script" uid="uid://c0gb8eomq355m" path="res://Menu Part/BehaviorCard.cs" id="2_65url"]
 [ext_resource type="PackedScene" uid="uid://cyp2hfdy6byrm" path="res://Menu Part/Item.tscn" id="3_cwjjx"]
 [ext_resource type="Texture2D" uid="uid://dp010rl8vbhc7" path="res://Menu Part/Graphics/Tags.png" id="4_g8g5s"]
 

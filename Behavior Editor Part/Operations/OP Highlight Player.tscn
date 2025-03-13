@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bur7kqqk1888t"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_8tbo5"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_HighlightPlayer.cs" id="2_kmo54"]
+[ext_resource type="Script" uid="uid://1v02w55c5c6u" path="res://Behavior Editor Part/Operations/OP_HighlightPlayer.cs" id="2_kmo54"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_k6067"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_8dxbg"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_8dxbg"]
 
 [node name="Highlight Player Operation" type="HBoxContainer" node_paths=PackedStringArray("varNameLabel", "varTypeTextureRect", "identationControl", "deselectionButton")]
 custom_minimum_size = Vector2(0, 275)

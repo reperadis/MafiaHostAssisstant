@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtvb8yw87d3c"]
 
 [ext_resource type="Theme" uid="uid://c56ucxmoo2hxi" path="res://Config Fields/Named Field Light.tres" id="1_2wmvx"]
-[ext_resource type="Script" path="res://Config Fields/NamedEnumConfigField.cs" id="1_aqxui"]
+[ext_resource type="Script" uid="uid://lriftbsbwgqq" path="res://Config Fields/NamedEnumConfigField.cs" id="1_aqxui"]
 [ext_resource type="Theme" uid="uid://m0siy14yavkj" path="res://Config Fields/Named Field Dark.tres" id="1_qed35"]
-[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_8degx"]
+[ext_resource type="Script" uid="uid://dv5gpapukex7v" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_8degx"]
 [ext_resource type="PackedScene" uid="uid://cwuikg8wm7ifp" path="res://UI/Dropdown/Dropdown.tscn" id="3_36nkh"]
 
 [node name="Named Enum Field" type="PanelContainer" node_paths=PackedStringArray("label", "dropdown")]

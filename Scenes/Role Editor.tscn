@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djmir7n50jtl8" path="res://Config Fields/Named String Field.tscn" id="1_5emqt"]
 [ext_resource type="Theme" uid="uid://bqm4r87lxhdnh" path="res://Role Editor Part/Role Editor Light.tres" id="1_61jym"]
-[ext_resource type="Script" path="res://Role Editor Part/RoleEditor.cs" id="2_8bix1"]
+[ext_resource type="Script" uid="uid://pgwwkh2774we" path="res://Role Editor Part/RoleEditor.cs" id="2_8bix1"]
 [ext_resource type="PackedScene" uid="uid://rgyc8mewlqjp" path="res://Holdable Button.tscn" id="3_bqxwg"]
 [ext_resource type="PackedScene" uid="uid://lti3vmrjhjde" path="res://Role Editor Part/Behavior Selection Panel.tscn" id="4_jvekm"]
 [ext_resource type="PackedScene" uid="uid://b8w64s3oxbrmy" path="res://Role Editor Part/Role Action Panel.tscn" id="7_y1brm"]

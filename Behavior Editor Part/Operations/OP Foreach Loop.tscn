@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b58fdugyv7mqi"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_vm0mn"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_ForeachLoop.cs" id="2_fchqk"]
+[ext_resource type="Script" uid="uid://1kiq3vkmeh0r" path="res://Behavior Editor Part/Operations/OP_ForeachLoop.cs" id="2_fchqk"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_2j427"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_ker3m"]
-[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="4_xtmw5"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_ker3m"]
+[ext_resource type="Script" uid="uid://bqsj6cepgo84b" path="res://Behavior Editor Part/OperationScope.cs" id="4_xtmw5"]
 
 [node name="Foreach Loop Operation" type="HBoxContainer" node_paths=PackedStringArray("behaviorScope", "listVarNameLabel", "listVarTypeTextureRect", "elementNameLabel", "elementTypeTextureRect", "identationControl", "deselectionButton")]
 anchors_preset = 8

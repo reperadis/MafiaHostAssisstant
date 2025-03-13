@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dauowciy1rdap"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_fkra4"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP If Statement/OP_IfStatement.cs" id="1_q5rp7"]
+[ext_resource type="Script" uid="uid://cd10p1b6pg8hc" path="res://Behavior Editor Part/Operations/OP If Statement/OP_IfStatement.cs" id="1_q5rp7"]
 [ext_resource type="PackedScene" uid="uid://ysi30mtmna7p" path="res://Behavior Editor Part/Operations/OP If Statement/End If.tscn" id="2_h505b"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_8j2w3"]
-[ext_resource type="Script" path="res://Behavior Editor Part/OperationScope.cs" id="3_vc1vq"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="5_bw7b2"]
+[ext_resource type="Script" uid="uid://bqsj6cepgo84b" path="res://Behavior Editor Part/OperationScope.cs" id="3_vc1vq"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="5_bw7b2"]
 
 [node name="Behavior Container" type="HBoxContainer" node_paths=PackedStringArray("varNameLabel", "varTypeTextureRect", "endIf", "behaviorScope", "identationControl")]
 offset_right = 900.0

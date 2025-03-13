@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cua3huj5xk45l"]
 
 [ext_resource type="Theme" uid="uid://dy3krm3mm8vhp" path="res://Behavior Editor Part/Graphics/Operation Light.tres" id="1_opvsb"]
-[ext_resource type="Script" path="res://Behavior Editor Part/Operations/OP_LogicalOperation.cs" id="2_enpwa"]
+[ext_resource type="Script" uid="uid://bc6omw5e6x8dn" path="res://Behavior Editor Part/Operations/OP_LogicalOperation.cs" id="2_enpwa"]
 [ext_resource type="Theme" uid="uid://p4whnd2vn53d" path="res://Behavior Editor Part/Graphics/Operation Dark.tres" id="3_0tki3"]
-[ext_resource type="Script" path="res://HoldableButton.cs" id="4_cknb5"]
+[ext_resource type="Script" uid="uid://5x6leis4fy6e" path="res://HoldableButton.cs" id="4_cknb5"]
 
 [node name="Logical Operation Operation" type="HBoxContainer" node_paths=PackedStringArray("assignToVarNameLabel", "assignToVarTypeTextureRect", "leftVarNameLabel", "leftVarTypeTextureRect", "operationNameLabel", "operationIconTextureRect", "rightVarNameLabel", "rightVarTypeTextureRect", "identationControl", "deselectionButton")]
 custom_minimum_size = Vector2(0, 275)

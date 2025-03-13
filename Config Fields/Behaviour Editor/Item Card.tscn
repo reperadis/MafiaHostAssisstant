@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vj3igkelhfro"]
 
-[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEItemCard.cs" id="1_kgfy2"]
+[ext_resource type="Script" uid="uid://bg0gjwpwe4lmo" path="res://Config Fields/Behaviour Editor/BEItemCard.cs" id="1_kgfy2"]
 
 [node name="Item" type="PanelContainer" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(710, 120)

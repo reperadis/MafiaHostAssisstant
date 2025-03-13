@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhnl7wtsncj27"]
 
-[ext_resource type="Script" path="res://Config Fields/NamedIntConfigField.cs" id="1_2iawk"]
+[ext_resource type="Script" uid="uid://nm22rk0jnku5" path="res://Config Fields/NamedIntConfigField.cs" id="1_2iawk"]
 [ext_resource type="PackedScene" uid="uid://bcwjetnids2ht" path="res://Config Fields/Int Config Field.tscn" id="3_sv6so"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woun3"]

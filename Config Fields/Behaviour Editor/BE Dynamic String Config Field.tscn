@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dsssicrvr2qps"]
 
-[ext_resource type="Script" path="res://Config Fields/Behaviour Editor/BEDynamicStringConfigField.cs" id="1_ffdon"]
+[ext_resource type="Script" uid="uid://xd1iy4r26jie" path="res://Config Fields/Behaviour Editor/BEDynamicStringConfigField.cs" id="1_ffdon"]
 [ext_resource type="PackedScene" uid="uid://dwyhvtb07vpbc" path="res://Config Fields/Behaviour Editor/BE Dynamic String Element.tscn" id="2_pq6cw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcjs2"]
